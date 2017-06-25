@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Playfair+Display:400,700);
+
+.toolbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  padding-top: 1px;
+  background-color: #161616;
+}
+
+.title-year {
+  margin: 0;
+  padding: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.25rem;
+  letter-spacing: 5px;
+}
+.year {
+  font-family: 'Libre Baskerville', serif;
+  font-weight: 700;
+  font-size: .65rem;
+  letter-spacing: 5px;
+}
+
+.info {
+  text-align: left;
+  margin-top: -17px;
+  position: fixed;
+}
+.description {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: .75rem;
+  letter-spacing: 5px;
+  /*margin-top: -1px;*/
+  /*position: absolute;*/
+}

@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+
+body {
+  -webkit-font-smoothing: antialiased;
+}
+
+.mainTitle {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1.7rem;
+  letter-spacing: 4px;
+  margin: 11px 0 7px 0;
+  text-align: left;
+}
+
+.App {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: red;*/
+}
+
+.App-header {
+  margin-top: 0px;
+  position: fixed;
+  /*height: 75px;*/
+  width: 100%;
+  padding: 0px;
+  color: white;
+}
+
+.navigation {
+  postion: relative;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 15px;
+}
+
+/* Artwork */
+.navigation :nth-child(1) {
+  width: 93px;
+}
+
+/* Short Films */
+.navigation :nth-child(2) {
+  width: 126px;
+}
+
+/* Music */
+.navigation :nth-child(3) {
+  width: 77px;
+}
+
+/* Store */
+.navigation :nth-child(4) {
+  width: 73px;
+}
+
+/* About */
+.navigation :nth-child(5) {
+  width: 73px;
+}
+
+.option {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: .8rem;
+  padding-bottom: 5px;
+  letter-spacing: 2px;
+  color: white;
+  border: 1px solid #161616;
+}
+.option:hover {
+  cursor: pointer;
+  border: 1px solid #999;
+  border-top-width: 1px;
+  border-top-color: #161616;
+  border-left-width: 1px;
+  border-left-color: #161616;
+  border-right-width: 1px;
+  border-right-color: #161616;
+}
