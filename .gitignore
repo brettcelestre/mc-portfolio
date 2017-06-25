@@ -3,6 +3,10 @@
 #notes
 notes.txt
 
+#images
+src/assets/gallery
+src/assets/img
+
 # dependencies
 /node_modules
 
