@@ -4,12 +4,6 @@ import './App.css';
 
 class App extends Component {
 
-  componentDidMount(){
-    let x = document.getElementsByClassName('navigation');
-    console.log('YO', x);
-
-  }
-
   render() {
     return (
       <div className="App">
