@@ -1,0 +1,24 @@
+{
+  "data": [
+    {
+      "src": "../../assets/gallery/example/Grant_0_",
+      "title": "Grant",
+      "date": "2017",
+      "description": "Nikon D800 | 50mm",
+      "sizes": {
+        "large": {
+          "width": 1500,
+          "height": 1001
+        },
+        "medium": {
+          "width": 1100,
+          "height": 734
+        },
+        "small": {
+          "width": 800,
+          "height": 534
+        }
+        }
+    }
+  ]
+}
