@@ -1,13 +1,8 @@
-
-
-
 ## Matthew Celestre's Portfolio
 
 - [Folder Structure](#folder-structure)
 
 ## Folder Structure
-
-After creation, your project should look like this:
 
 ```
 my-app/
@@ -31,5 +26,3 @@ my-app/
   index.css
   index.js
 ```
-
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).

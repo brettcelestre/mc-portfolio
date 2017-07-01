@@ -4,8 +4,7 @@
 notes.txt
 
 #images
-src/assets/gallery
-src/assets/img
+*.jpg
 
 # dependencies
 /node_modules
