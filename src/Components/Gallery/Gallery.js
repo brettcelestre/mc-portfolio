@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import Toolbar from '../Toolbar/Toolbar';
-import './Gallery.css';
+import ImageViewer from '../ImageViewer/ImageViewer.js';
+import Toolbar from '../Toolbar/Toolbar.js';
 
+import './Gallery.css';
 
 class Gallery extends Component {
 
@@ -21,8 +22,7 @@ class Gallery extends Component {
     return (
       <div className="gallery">
 
-        {/* Image Viewer */}
-        <img src={bio} alt="hi" width="1500" height="1077" />
+        <ImageViewer />
 
         <Toolbar />
 
