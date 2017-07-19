@@ -1,41 +1,80 @@
 import React, { Component } from 'react';
-import Content from '../Content/Content'
+import { Link } from 'react-router-dom';
+
 import './App.css';
 
 class App extends Component {
 
+  constructor(props) {
+    super(props)
+    this.state = {
+      artmenu: false,
+      medium: '',
+    };
+    this.artworkMenuEnter = this.artworkMenuEnter.bind(this);
+    this.artworkMenuLeave = this.artworkMenuLeave.bind(this);
+    this.artworkGallerySelector = this.artworkGallerySelector.bind(this);
+  }
+
+  // Displays Dropdown
+  artworkMenuEnter() {
+    this.setState({artmenu: true});
+  }
+  // Hides dropdown
+  artworkMenuLeave() {
+    this.setState({artmenu: false});
+  }
+
+  artworkGallerySelector(medium) {
+    this.setState({medium: medium});
+    console.log(medium);
+    console.log(this.state.medium);
+  }
+
   render() {
+
     return (
       <div className="App">
 
-        <div className="App-header container">
+        <div className="App-header">
+          <div className=" container">
 
-          <div className="u-full-width">
-            <h2 className="mainTitle">Matthew Celestre</h2>
+            <div className="u-full-width">
+              <Link to="/home"><h2 className="mainTitle">Matthew Celestre</h2></Link>
+            </div>
+
+            <div className="navigation u-full-width">
+              <div className="option"
+                  onMouseEnter={this.artworkMenuEnter}
+                  onMouseLeave={this.artworkMenuLeave}>
+                Artwork
+                <div className={`artmenu ${this.state.artmenu ? 'visible' : ''}`}>
+                  <Link to="/artwork/paintings" onClick={() => this.artworkGallerySelector('painting')}><div>Paintings</div></Link>
+                  <Link to="/artwork/stipplings"><div>Stipplings</div></Link>
+                  <Link to="/artwork/cross-hatchings"><div>Cross Hatchings</div></Link>
+                  <Link to="/artwork/markers"><div>Markers</div></Link>
+                  <Link to="/artwork/watercolors"><div>Watercolors</div></Link>
+                </div>
+              </div>
+              <Link className="option" to="/short-films">
+                  Short Films
+              </Link>
+              <Link className="option" to="/music">
+                  Music
+              </Link>
+              <Link className="option" to="/store">
+                  Store
+              </Link>
+              <Link className="option" to="/about">
+                  About
+              </Link>
+              <Link className="option" to="/links">
+                  Links
+              </Link>
+            </div>
+
           </div>
-
-          <div className="navigation u-full-width">
-            <div className="option">
-              Artwork
-            </div>
-            <div className="option">
-              Short Films
-            </div>
-            <div className="option">
-              Music
-            </div>
-            <div className="option">
-              Store
-            </div>
-            <div className="option">
-              About
-            </div>
-          </div>
-
         </div>
-
-
-        <Content />
 
       </div>
     );

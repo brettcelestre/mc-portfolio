@@ -1,6 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+
 body {
-  -webkit-font-smoothing: antialiased; }
+  -webkit-font-smoothing: antialiased;
+}
 
 .mainTitle {
   font-family: 'Playfair Display', serif;
@@ -11,11 +13,13 @@ body {
   margin: 11px 0 7px 0;
   padding-left: 15px;
   text-decoration: none;
-  color: white; }
-  .mainTitle:hover {
+  color: white;
+  &:hover {
     text-decoration: none;
     color: white;
-    cursor: pointer; }
+    cursor: pointer;
+  }
+}
 
 .App {
   text-align: center;
@@ -23,7 +27,8 @@ body {
   margin-top: 0;
   padding: 0;
   width: 100%;
-  height: 100%; }
+  height: 100%;
+}
 
 .App-header {
   top: 0;
@@ -34,13 +39,15 @@ body {
   height: 75px;
   width: 100%;
   padding: 0px;
-  color: white; }
+  color: white;
+}
 
 li {
-  list-style-type: none; }
+  list-style-type: none;
+}
 
 /* Artwork Menu */
-.artmenu {
+.artmenu{
   background-color: #161616;
   position: absolute;
   top: 65px;
@@ -50,27 +57,31 @@ li {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: .8rem;
-  letter-spacing: 2px; }
-  .artmenu.visible {
-    display: block; }
-  .artmenu div {
+  letter-spacing: 2px;
+  &.visible {
+    display: block;
+  }
+  div {
     width: 147px !important;
     height: 28px;
     padding-top: 8px;
     padding-left: 12px;
     text-align: left;
-    border-width: 0 0 0 1px;
-    border-style: solid;
-    border-color: #161616;
+    border-width:0 0 0 1px;
+    border-style:solid;
+    border-color:#161616;
     color: white;
-    text-decoration: none; }
-    .artmenu div:hover {
+    text-decoration: none;
+    &:hover {
       text-decoration: none;
       width: 145px !important;
       cursor: pointer;
       background-color: #191919;
       border-left: 1px solid #999;
-      border-right: 0; }
+      border-right: 0;
+    }
+  }
+}
 
 .navigation {
   z-index: 9;
@@ -79,31 +90,38 @@ li {
   width: 100%;
   align-items: center;
   height: 16px;
-  margin-top: 9px; }
+  margin-top: 9px;
+}
 
 /* Artwork */
 .navigation :nth-child(1) {
-  width: 93px; }
+  width: 93px;
+}
 
 /* Short Films */
 .navigation :nth-child(2) {
-  width: 126px; }
+  width: 126px;
+}
 
 /* Music */
 .navigation :nth-child(3) {
-  width: 77px; }
+  width: 77px;
+}
 
 /* Store */
 .navigation :nth-child(4) {
-  width: 73px; }
+  width: 73px;
+}
 
 /* About */
 .navigation :nth-child(5) {
-  width: 73px; }
+  width: 73px;
+}
 
 /* Links */
 .navigation :nth-child(6) {
-  width: 69px; }
+  width: 69px;
+}
 
 .option {
   font-family: 'Playfair Display', serif;
@@ -112,12 +130,14 @@ li {
   letter-spacing: 2px;
   color: white;
   padding-bottom: 5px;
-  border-width: 0 0 1px 0;
-  border-style: solid;
-  border-color: #161616;
-  text-decoration: none; }
-  .option:hover {
+  border-width:0 0 1px 0;
+  border-style:solid;
+  border-color:#161616;
+  text-decoration: none;
+  &:hover {
     text-decoration: none;
     color: white;
     cursor: pointer;
-    border-bottom: 1px solid #999; }
+    border-bottom: 1px solid #999;
+  }
+}

@@ -6,21 +6,23 @@ import './Gallery.css';
 
 class Gallery extends Component {
 
-  // Init
+  constructor(props) {
+    super(props)
 
-  // Left
-  galleryLeft() {
-
-  }
-
-  // Right
-  galleryRight() {
+    this.state = {
+      src: '',
+      name: null,
+      date: null,
+      medium: null,
+      galleryLength: null,
+      currentNumber: null
+    };
 
   }
 
   render() {
     return (
-      <div className="gallery">
+      <div>
 
         <ImageViewer />
 
