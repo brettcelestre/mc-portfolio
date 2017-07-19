@@ -5,6 +5,10 @@ notes.txt
 
 #images
 *.jpg
+*.svg
+
+#styles produced from scss files
+*.css
 
 # dependencies
 /node_modules
