@@ -1,7 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Playfair+Display:400,700);
 
 .outer {
-  z-index: 9;
+  z-index: 10;
   background-color: #161616;
   margin: 0;
   padding: 0;
