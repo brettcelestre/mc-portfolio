@@ -23,15 +23,16 @@ ReactDOM.render(
       <Route path="/" component={App}>
       </Route>
       <Switch>
-        <Route path="/artwork/watercolors" component={Gallery} />
-        <Route path="/artwork/markers" component={Gallery} />
+        <Route path="/artwork/drawings/:id/:name" component={Gallery} />
+        <Route path="/artwork/drawings" component={Gallery} />
+        <Route path="/artwork/cross-hatchings/:id/:name" component={Gallery} />
         <Route path="/artwork/cross-hatchings" component={Gallery} />
         <Route path="/artwork/stipplings" component={Gallery} />
-        <Route path="/artwork/stipplings/:stippling" component={Gallery} />
+        <Route path="/artwork/stipplings/:id/:name" component={Gallery} />
         <Route path="/artwork/paintings" component={Gallery} />
-        <Route path="/artwork/paintings/:painting" component={Gallery} />
+        <Route path="/artwork/paintings/:id/:name" component={Gallery} />
         <Route path="/short-films" component={ShortFilms} />
-        <Route path="/short-films/:film" component={ShortFilms} />
+        <Route path="/short-films/:name" component={ShortFilms} />
         <Route path="/music" component={Music} />
         <Route path="/store" component={Store} />
         <Route path="/links" component={Links} />

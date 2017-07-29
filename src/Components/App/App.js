@@ -52,8 +52,7 @@ class App extends Component {
                   <Link to="/artwork/paintings" onClick={() => this.artworkGallerySelector('painting')}><div>Paintings</div></Link>
                   <Link to="/artwork/stipplings"><div>Stipplings</div></Link>
                   <Link to="/artwork/cross-hatchings"><div>Cross Hatchings</div></Link>
-                  <Link to="/artwork/markers"><div>Markers</div></Link>
-                  <Link to="/artwork/watercolors"><div>Watercolors</div></Link>
+                  <Link to="/artwork/drawings"><div>Drawings</div></Link>
                 </div>
               </div>
               <Link className="option" to="/short-films">

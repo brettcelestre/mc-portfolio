@@ -1,4 +1,4 @@
-
+/*
 // Test Data
 var data = [
   {
@@ -47,37 +47,49 @@ $back.onclick = function back(){
     $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
   }
 }
+*/
 
 // Checks window width & height and updates correct image resolution
-function updateImageSize(){
+const updateImageSize = () => {
 
   // XLARGE / TV
 
   // LARGE / DESKTOP
   // TODO: Also height
   if ( window.self.innerWidth >= 1100 ) {
-    currentSize = 'large';
-    $size[0].innerHTML = '<h5>Large</h5>'
+    console.log('large');
+    return 'large';
+
+    // currentSize = 'large';
+    // $size[0].innerHTML = '<h5>Large</h5>'
     // Updates Image
-    $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
+    // $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
 
   // MEDIUM / TABLET
   // TODO: Also height
   } else if ( 1099 >= window.self.innerWidth && 800 <= window.self.innerWidth) {
-    currentSize = 'medium';
-    $size[0].innerHTML = '<h5>Medium</h5>';
+    console.log('medium');
+    return 'medium';
+
+    // currentSize = 'medium';
+    // $size[0].innerHTML = '<h5>Medium</h5>';
     // Updates Image
-    $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
+    // $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
 
   // SMALL / MOBILE
   // TODO: Also height
   } else if ( 799 >= window.self.innerWidth ) {
-    currentSize = 'small';
-    $size[0].innerHTML = '<h5>Small</h5>';
+    console.log('small');
+    return 'small';
+
+    // currentSize = 'small';
+    // $size[0].innerHTML = '<h5>Small</h5>';
     // Updates Image
-    $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
+    // $viewer[0]['innerHTML'] = '<img src="' + data[current]['sizes'][currentSize]['src'] + '" width="' + data[current]['sizes'][currentSize]['width'] + '" height="' + data[current]['sizes'][currentSize]['height'] + '"/>';
   }
 }
 // Initalize first image
-updateImageSize();
-window.onresize = updateImageSize;
+// updateImageSize();
+// window.onresize = updateImageSize;
+
+module.exports = { updateImageSize };
