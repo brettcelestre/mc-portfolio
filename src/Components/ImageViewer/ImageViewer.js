@@ -95,33 +95,33 @@ class ImageViewer extends Component {
     return (
       <div className="image-viewer">
 
+
         <WindowResizeListener
           /*
-            TODO: Get debounce to work. Currently at 100
-            DEBOUNCE_TIME={4000}
+          TODO: Get debounce to work. Currently at 100
+          DEBOUNCE_TIME={4000}
           */
           onResize={windowSize => {
             this.windowSize(windowSize.windowWidth, windowSize.windowHeight)
           }
         }/>
 
-        // WRAP IN DIV,
-        <div
+        <div className="image-controls">
+          <div
             className="previous"
             onClick={this.previous}>
-          <img
-            src={require("../../assets/svg/ios-arrow-left.svg")}
-            width="39px"
-            height="175px"
-            alt="previous"
-            className="previousSVG"/>
+            <img
+              src={require("../../assets/svg/ios-arrow-left.svg")}
+              width="39px"
+              height="175px"
+              alt="previous"
+              className="previousSVG"/>
+            </div>
+            <div
+              className="next"
+              onClick={this.next}>
+            </div>
         </div>
-        <div
-            className="next"
-            onClick={this.next}>
-        </div>
-
-        // WRAP IMAGE IN DIV
 
         {/* <Image
           // src={require("../../assets/img/bio/matthew_celestre_painting_01.jpg")}
@@ -139,17 +139,19 @@ class ImageViewer extends Component {
           // style={style}
           className="gallery-image"
         />*/}
-        <img
-          // src={bio}
-          // USE THIS ONE
-          src={require("./matthew_celestre_painting_01.jpg")}
-          width={444}
-          height={444}
-          // width={this.state.width}
-          // height={this.state.height}
-          className="gallery-image"
-          alt="picture"
-        />
+        <div className="image">
+          <img
+            // src={bio}
+            // USE THIS ONE
+            src={require("./matthew_celestre_painting_01.jpg")}
+            // width={444}
+            // height={444}
+            width={this.state.width}
+            height={this.state.height}
+            className="gallery-image"
+            alt="picture"
+          />
+        </div>
       </div>
     );
   }
