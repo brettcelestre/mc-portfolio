@@ -8,12 +8,16 @@ import { updateImageSize } from '../../utils/utils';
 import paintings from '../../assets/data/paintings.json';
 
 const paintingsSRC = {
+  "Oaklahoma City": {
+    small: require('../../assets/gallery/paintings/Oaklahoma_City_Small.jpg'),
+    medium: require('../../assets/gallery/paintings/Oaklahoma_City_Medium.jpg'),
+    large: require('../../assets/gallery/paintings/Oaklahoma_City_Large.jpg')
+  },
   "Italy": {
     small: require('../../assets/gallery/paintings/Italy_Small.jpg'),
     medium: require('../../assets/gallery/paintings/Italy_Medium.jpg'),
     large: require('../../assets/gallery/paintings/Italy_Large.jpg')
-  }
-  ,
+  },
   "Winter Fruit": {
     small: require('../../assets/gallery/paintings/Winter_Fruit_Small.jpg'),
     medium: require('../../assets/gallery/paintings/Winter_Fruit_Medium.jpg'),
@@ -31,9 +35,9 @@ class ImageViewer extends Component {
   componentWillMount() {
     console.log('will mount');
     this.setState({
+      src: `${paintings.data[this.state.index].src}`,
       name: paintings.data[this.state.index].title,
       description: paintings.data[this.state.index].description,
-      src: `${paintings.data[this.state.index].src}`,
       date: paintings.data[this.state.index].date,
       width: paintings.data[this.state.index].sizes[this.state.currentSize].width,
       height: paintings.data[this.state.index].sizes[this.state.currentSize].height});
@@ -129,10 +133,10 @@ class ImageViewer extends Component {
         break;
     }
     this.setState({
+      src: `${paintings.data[this.state.index].src}`,
       index: this.state.index,
       name: paintings.data[this.state.index].title,
       description: paintings.data[this.state.index].description,
-      src: `${paintings.data[this.state.index].src}`,
       date: paintings.data[this.state.index].date,
       width: paintings.data[this.state.index].sizes[this.state.currentSize].width,
       height: paintings.data[this.state.index].sizes[this.state.currentSize].height
@@ -208,33 +212,3 @@ class ImageViewer extends Component {
 }
 
 export default ImageViewer;
-
-
-
-
-// {
-//   "src": "../../assets/gallery/paintings/Oaklahoma_City_",
-//   "title": "Oaklahoma City",
-//   "date": "2009",
-//   "description": "Oil on Canvas | 5' x 4'",
-//   "arrows": "light",
-//   "info": "",
-//   "sizes": {
-//     "zoom": {
-//       "width": 100,
-//       "height": 100
-//     },
-//     "large": {
-//       "width": 1023,
-//       "height": 1200
-//     },
-//     "medium": {
-//       "width": 767,
-//       "height": 900
-//     },
-//     "small": {
-//       "width": 512,
-//       "height": 600
-//     }
-//     }
-// },

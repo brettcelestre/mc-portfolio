@@ -1,6 +1,32 @@
 {
   "data": [
     {
+      "src": "../../assets/gallery/paintings/Oaklahoma_City_",
+      "title": "Oaklahoma City",
+      "date": "2009",
+      "description": "Oil on Canvas | 5' x 4'",
+      "arrows": "light",
+      "info": "",
+      "sizes": {
+        "zoom": {
+          "width": 100,
+          "height": 100
+        },
+        "large": {
+          "width": 1023,
+          "height": 1200
+        },
+        "medium": {
+          "width": 767,
+          "height": 900
+        },
+        "small": {
+          "width": 512,
+          "height": 600
+        }
+        }
+    },
+    {
       "src": "../../assets/gallery/paintings/Italy_",
       "title": "Italy",
       "date": "2008",

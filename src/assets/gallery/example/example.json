@@ -2,6 +2,32 @@
   "data": [
     {
       "src": "../../assets/gallery/example/Grant_0_",
+      "title": "Oaklahoma City",
+      "date": "2017",
+      "description": "Nikon D800 | 50mm",
+      "arrows": "light",
+      "info": "This image was created in Oakland California. \n Here Grant Seland plays the guitar surrounded by foliage. \nGrant has a cameo in my short film Del Rio as passenger on the train.\n He is the passenger turning a banjo.\n You can find his personal music here.",
+      "sizes": {
+        "zoom": {
+          "width": 2300,
+          "height": 1700
+        },
+        "large": {
+          "width": 1500,
+          "height": 1001
+        },
+        "medium": {
+          "width": 1100,
+          "height": 734
+        },
+        "small": {
+          "width": 800,
+          "height": 534
+        }
+        }
+    },
+    {
+      "src": "../../assets/gallery/example/matthew_celestre_painting_0_",
       "title": "Grant",
       "date": "2017",
       "description": "Nikon D800 | 50mm",
