@@ -5,12 +5,21 @@ import { WindowResizeListener } from 'react-window-resize-listener';
 import './ImageViewer.css';
 import { updateImageSize } from '../../utils/utils';
 
-import example from '../../assets/gallery/example/example.json';
-import bio from '../../assets/img/bio/matthew_celestre_painting_01.jpg';
-//
-// import grant_small from '../../assets/gallery/example/Grant_0_Small.jpg';
-// import grant_medium from '../../assets/gallery/example/Grant_0_Medium.jpg';
-// import grant_large from '../../assets/gallery/example/Grant_0_Large.jpg';
+import paintings from '../../assets/data/paintings.json';
+
+const paintingsSRC = {
+  "Italy": {
+    small: require('../../assets/gallery/paintings/Italy_Small.jpg'),
+    medium: require('../../assets/gallery/paintings/Italy_Medium.jpg'),
+    large: require('../../assets/gallery/paintings/Italy_Large.jpg')
+  }
+  ,
+  "Winter Fruit": {
+    small: require('../../assets/gallery/paintings/Winter_Fruit_Small.jpg'),
+    medium: require('../../assets/gallery/paintings/Winter_Fruit_Medium.jpg'),
+    large: require('../../assets/gallery/paintings/Winter_Fruit_Large.jpg')
+  }
+};
 
 class ImageViewer extends Component {
 
@@ -22,35 +31,62 @@ class ImageViewer extends Component {
   componentWillMount() {
     console.log('will mount');
     this.setState({
-      name: example.data[0].title,
-      description: example.data[0].description,
-      src: `${example.data[0].src}`,
-      date: example.data[0].date,
-      width: example.data[0].sizes[this.state.currentSize].width,
-      height: example.data[0].sizes[this.state.currentSize].height});
+      name: paintings.data[this.state.index].title,
+      description: paintings.data[this.state.index].description,
+      src: `${paintings.data[this.state.index].src}`,
+      date: paintings.data[this.state.index].date,
+      width: paintings.data[this.state.index].sizes[this.state.currentSize].width,
+      height: paintings.data[this.state.index].sizes[this.state.currentSize].height});
 
     // Utils function for checking window size
     // window.onresize = updateImageSize;
     // console.log('size test', updateImageSize());
+    console.log('INDEX', this.state.index);
+    console.log('example.data.length', paintings.data.length);
   }
 
   componentDidMount(){
-    console.log('this.state', this.state);
+    let src = this.state.src;
+    switch(this.state.currentSize) {
+      case 'xlarge':
+        this.setState({src: `${this.state.src}XLarge.jpg`});
+        break;
+      case 'large':
+        console.log('LARGE RAN');
+        // src += 'Large.jpg';
+        this.setState({src: `${this.state.src}Large.jpg`});
+        // this.setState({src: src});
+        // console.log('src', this.state.src + 'Large.jpg');
+        break;
+      case 'medium':
+        this.setState({src: `${this.state.src}Medium.jpg`});
+        break;
+      case 'small':
+        this.setState({src: `${this.state.src}Small.jpg`});
+        break;
+      default:
+        // I dont know
+      break;
+    }
+    // console.log('this.state', this.state);
   }
 
   constructor(props){
     super(props)
     this.state = {
+      index: 0,
       name: '',
       src: '',
       date: '',
       description: '',
       currentSize: 'large',
       width: 0,
-      height: 0
+      height: 0,
+      loading: '"../../assets/svg/load-c.svg"'
     }
 
     this.windowSize = this.windowSize.bind(this);
+    this.galleryWheel = this.galleryWheel.bind(this);
     this.previous = this.previous.bind(this);
     this.next = this.next.bind(this);
   }
@@ -79,23 +115,47 @@ class ImageViewer extends Component {
     // return size;
   }
 
+  galleryWheel(direction) {
+    switch(direction) {
+      case 'previous':
+        if ( this.state.index > 0 ) {
+          --this.state.index;
+        }
+        break;
+      case 'next':
+        if ( this.state.index < (paintings.data.length-1) ) {
+          ++this.state.index;
+        }
+        break;
+    }
+    this.setState({
+      index: this.state.index,
+      name: paintings.data[this.state.index].title,
+      description: paintings.data[this.state.index].description,
+      src: `${paintings.data[this.state.index].src}`,
+      date: paintings.data[this.state.index].date,
+      width: paintings.data[this.state.index].sizes[this.state.currentSize].width,
+      height: paintings.data[this.state.index].sizes[this.state.currentSize].height
+    });
+  }
+
   previous() {
-    console.log('---------');
-    console.log('previous');
-    // console.log('this.state', this.state);
+    this.galleryWheel('previous');
   }
 
   next() {
-    console.log('---------');
-    console.log('next');
+    this.galleryWheel('next');
   }
 
   render() {
+    console.log('-----------------------render ');
+    let loadingSRC = './matthew_celestre_painting_01.jpg';
+    let liveSRC = this.state.src.substr(this.state.src.length -3, this.state.src.length) === 'jpg' ? this.state.src : this.state.loading;
+    // console.log('Live SRC = ', liveSRC);
+
 
     return (
       <div className="image-viewer">
-
-
         <WindowResizeListener
           /*
           TODO: Get debounce to work. Currently at 100
@@ -123,29 +183,18 @@ class ImageViewer extends Component {
             </div>
         </div>
 
-        {/* <Image
-          // src={require("../../assets/img/bio/matthew_celestre_painting_01.jpg")}
-          // src="../../assets/img/bio/matthew_celestre_painting_01.jpg"
-          src={bio}
-
-          // width={1500}
-          // height={1077}
-
-          width={this.state.width}
-          height={this.state.height}
-          // src={require(`${this.state.SRC}`)}
-          // src={`${this.state.SRC}`}
-          // src={this.src}
-          // style={style}
-          className="gallery-image"
-        />*/}
         <div className="image">
           <img
-            // src={bio}
-            // USE THIS ONE
-            src={require("./matthew_celestre_painting_01.jpg")}
-            // width={444}
-            // height={444}
+            // src={require("./matthew_celestre_painting_01.jpg")}
+            // src={require("../../assets/gallery/paintings/Grant_0_Large.jpg")}
+            // src={require("../../assets/gallery/example/Grant_0_Large.jpg")}
+            // src={require(liveSRC.toString())}
+            // src={require(this.state.loading)}
+
+
+            src={paintingsSRC[this.state.name][this.state.currentSize]}
+            // src={loadingSRC}
+
             width={this.state.width}
             height={this.state.height}
             className="gallery-image"
@@ -159,3 +208,33 @@ class ImageViewer extends Component {
 }
 
 export default ImageViewer;
+
+
+
+
+// {
+//   "src": "../../assets/gallery/paintings/Oaklahoma_City_",
+//   "title": "Oaklahoma City",
+//   "date": "2009",
+//   "description": "Oil on Canvas | 5' x 4'",
+//   "arrows": "light",
+//   "info": "",
+//   "sizes": {
+//     "zoom": {
+//       "width": 100,
+//       "height": 100
+//     },
+//     "large": {
+//       "width": 1023,
+//       "height": 1200
+//     },
+//     "medium": {
+//       "width": 767,
+//       "height": 900
+//     },
+//     "small": {
+//       "width": 512,
+//       "height": 600
+//     }
+//     }
+// },
