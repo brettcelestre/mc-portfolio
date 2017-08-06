@@ -3,6 +3,7 @@ import { WindowResizeListener } from 'react-window-resize-listener';
 // import Image from 'react-image-resizer';
 // import Img from 'react-image'
 import './ImageViewer.css';
+import Toolbar from '../Toolbar/Toolbar.js';
 import { updateImageSize } from '../../utils/utils';
 
 import paintings from '../../assets/data/paintings.json';
@@ -35,13 +36,13 @@ class ImageViewer extends Component {
   componentWillMount() {
     console.log('will mount');
     this.setState({
+      galleryLength: paintings.data.length,
       src: `${paintings.data[this.state.index].src}`,
       name: paintings.data[this.state.index].title,
       description: paintings.data[this.state.index].description,
       date: paintings.data[this.state.index].date,
       width: paintings.data[this.state.index].sizes[this.state.currentSize].width,
       height: paintings.data[this.state.index].sizes[this.state.currentSize].height});
-
     // Utils function for checking window size
     // window.onresize = updateImageSize;
     // console.log('size test', updateImageSize());
@@ -79,6 +80,7 @@ class ImageViewer extends Component {
     super(props)
     this.state = {
       index: 0,
+      galleryLength: 0,
       name: '',
       src: '',
       date: '',
@@ -155,8 +157,6 @@ class ImageViewer extends Component {
     console.log('-----------------------render ');
     let loadingSRC = './matthew_celestre_painting_01.jpg';
     let liveSRC = this.state.src.substr(this.state.src.length -3, this.state.src.length) === 'jpg' ? this.state.src : this.state.loading;
-    // console.log('Live SRC = ', liveSRC);
-
 
     return (
       <div className="image-viewer">
@@ -205,6 +205,8 @@ class ImageViewer extends Component {
             alt="picture"
           />
         </div>
+
+        <Toolbar imageData={this.state} />
       </div>
     );
   }

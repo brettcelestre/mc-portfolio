@@ -3,26 +3,20 @@ import './Toolbar.css';
 
 class Toolbar extends Component {
 
-  // constructor(props){
-    // super(props)
-    // this.props.current = 1;
-    // this.props.galleryLength = 6;
-  // }
-
   render() {
+    const galleryPosition = this.props.imageData.index + 1;
     return (
       <div className="outer">
         <div className="container toolbar">
           <div className="title-year row">
             <div className="u-full-width">
-              <span className="title">The Casino</span> <span className="year">- 2017</span>
-              {/* <span className="galleryIndex">{props.current}/{props.galleryLength}</span> */}
-              <span className="galleryIndex">1/8</span>
+              <span className="title">{this.props.imageData.name}</span> <span className="year">- {this.props.imageData.date}</span>
+              <span className="galleryIndex">{galleryPosition}/{this.props.imageData.galleryLength}</span>
             </div>
           </div>
           <div className="info row">
             <div className="u-full-width">
-              <span className="description">Oil on Canvas</span>
+              <span className="description">{this.props.imageData.description}</span>
             </div>
           </div>
         </div>

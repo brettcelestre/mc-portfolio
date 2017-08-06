@@ -14,7 +14,7 @@ import Home from './Components/Home/Home.js';
 import Links from './Components/Links/Links.js';
 import Store from './Components/Store/Store.js';
 import Music from './Components/Music/Music.js';
-import Gallery from './Components/Gallery/Gallery.js';
+import ImageViewer from './Components/ImageViewer/ImageViewer.js';
 import ShortFilms from './Components/ShortFilms/ShortFilms.js';
 
 ReactDOM.render(
@@ -23,14 +23,14 @@ ReactDOM.render(
       <Route path="/" component={App}>
       </Route>
       <Switch>
-        <Route path="/artwork/drawings/:id/:name" component={Gallery} />
-        <Route path="/artwork/drawings" component={Gallery} />
-        <Route path="/artwork/cross-hatchings/:id/:name" component={Gallery} />
-        <Route path="/artwork/cross-hatchings" component={Gallery} />
-        <Route path="/artwork/stipplings" component={Gallery} />
-        <Route path="/artwork/stipplings/:id/:name" component={Gallery} />
-        <Route path="/artwork/paintings" component={Gallery} />
-        <Route path="/artwork/paintings/:id/:name" component={Gallery} />
+        <Route path="/artwork/drawings/:id/:name" component={ImageViewer} />
+        <Route path="/artwork/drawings" component={ImageViewer} />
+        <Route path="/artwork/cross-hatchings/:id/:name" component={ImageViewer} />
+        <Route path="/artwork/cross-hatchings" component={ImageViewer} />
+        <Route path="/artwork/stipplings" component={ImageViewer} />
+        <Route path="/artwork/stipplings/:id/:name" component={ImageViewer} />
+        <Route path="/artwork/paintings" component={ImageViewer} />
+        <Route path="/artwork/paintings/:id/:name" component={ImageViewer} />
         <Route path="/short-films" component={ShortFilms} />
         <Route path="/short-films/:name" component={ShortFilms} />
         <Route path="/music" component={Music} />
