@@ -4,7 +4,6 @@ import { WindowResizeListener } from 'react-window-resize-listener';
 // import Img from 'react-image'
 import './ImageViewer.css';
 import Toolbar from '../Toolbar/Toolbar.js';
-import { updateImageSize } from '../../utils/utils';
 
 import paintings from '../../assets/data/paintings.json';
 
@@ -14,10 +13,10 @@ const paintingsSRC = {
     medium: require('../../assets/gallery/paintings/Oaklahoma_City_Medium.jpg'),
     large: require('../../assets/gallery/paintings/Oaklahoma_City_Large.jpg')
   },
-  "Italy": {
-    small: require('../../assets/gallery/paintings/Italy_Small.jpg'),
-    medium: require('../../assets/gallery/paintings/Italy_Medium.jpg'),
-    large: require('../../assets/gallery/paintings/Italy_Large.jpg')
+  "Somnolence": {
+    small: require('../../assets/gallery/paintings/Somnolence_Small.jpg'),
+    medium: require('../../assets/gallery/paintings/Somnolence_Medium.jpg'),
+    large: require('../../assets/gallery/paintings/Somnolence_Large.jpg')
   },
   "Winter Fruit": {
     small: require('../../assets/gallery/paintings/Winter_Fruit_Small.jpg'),
@@ -28,13 +27,7 @@ const paintingsSRC = {
 
 class ImageViewer extends Component {
 
-  // updateDimensions() {
-    // this.setState({width: $(window).width(), height: $(window).height()});
-    // console.log('updateDimensions', window);
-  // }
-
   componentWillMount() {
-    console.log('will mount');
     this.setState({
       galleryLength: paintings.data.length,
       src: `${paintings.data[this.state.index].src}`,
@@ -51,29 +44,6 @@ class ImageViewer extends Component {
   }
 
   componentDidMount(){
-    let src = this.state.src;
-    switch(this.state.currentSize) {
-      case 'xlarge':
-        this.setState({src: `${this.state.src}XLarge.jpg`});
-        break;
-      case 'large':
-        console.log('LARGE RAN');
-        // src += 'Large.jpg';
-        this.setState({src: `${this.state.src}Large.jpg`});
-        // this.setState({src: src});
-        // console.log('src', this.state.src + 'Large.jpg');
-        break;
-      case 'medium':
-        this.setState({src: `${this.state.src}Medium.jpg`});
-        break;
-      case 'small':
-        this.setState({src: `${this.state.src}Small.jpg`});
-        break;
-      default:
-        // I dont know
-      break;
-    }
-    // console.log('this.state', this.state);
   }
 
   constructor(props){
@@ -97,28 +67,44 @@ class ImageViewer extends Component {
     this.next = this.next.bind(this);
   }
 
-  // Move into utils
+  // Move into utils. Possibly not since there is a setState inside
   windowSize(width, height) {
-    let size;
-
     // Large
     if ( width >= 1100 && this.state.currentSize !== 'large' ) {
       this.setState({currentSize: 'large'});
+      this.setState({src: `${this.state.src}Large.jpg`});
       console.log('large', width);
+
+      // TODO: Run resizeImage
+      // $('#fit').imageFitWindow({offsetY: 67});
 
     // TODO: Also height
     // Medium
-  } else if ( 1099 >= width && 800 <= width && this.state.currentSize !== 'medium' ) {
+    } else if ( 1099 >= width && 800 <= width && this.state.currentSize !== 'medium' ) {
       this.setState({currentSize: 'medium'});
+      this.setState({src: `${this.state.src}Medium.jpg`});
       console.log('medium', width);
+
+
+
+      // TODO: Run resizeImage
+      // document.getElementsByClassName('gallery-image').imageFitWindow({offsetY: 75});
+      // $('.gallery-image').imageFitWindow({offsetY: 75});
+      // select 'gallery-image' and run .imageFitWindow({offsetY: SIZE OF TOOLBAR});
+
+
+
 
     // TODO: Also height
     // Small
-  } else if ( 799 >= width && this.state.currentSize !== 'small' ) {
+    } else if ( 799 >= width && this.state.currentSize !== 'small' ) {
       this.setState({currentSize: 'small'});
+      this.setState({src: `${this.state.src}Small.jpg`});
       console.log('small', width);
+
+      // TODO: Run resizeImage
+      // fitImage
     }
-    // return size;
   }
 
   galleryWheel(direction) {
@@ -155,9 +141,6 @@ class ImageViewer extends Component {
 
   render() {
     console.log('-----------------------render ');
-    let loadingSRC = './matthew_celestre_painting_01.jpg';
-    let liveSRC = this.state.src.substr(this.state.src.length -3, this.state.src.length) === 'jpg' ? this.state.src : this.state.loading;
-
     return (
       <div className="image-viewer">
         <WindowResizeListener
@@ -189,16 +172,7 @@ class ImageViewer extends Component {
 
         <div className="image">
           <img
-            // src={require("./matthew_celestre_painting_01.jpg")}
-            // src={require("../../assets/gallery/paintings/Grant_0_Large.jpg")}
-            // src={require("../../assets/gallery/example/Grant_0_Large.jpg")}
-            // src={require(liveSRC.toString())}
-            // src={require(this.state.loading)}
-
-
             src={paintingsSRC[this.state.name][this.state.currentSize]}
-            // src={loadingSRC}
-
             width={this.state.width}
             height={this.state.height}
             className="gallery-image"
@@ -210,7 +184,6 @@ class ImageViewer extends Component {
       </div>
     );
   }
-
 }
 
 export default ImageViewer;
