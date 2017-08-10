@@ -8,48 +8,48 @@
       "arrows": "light",
       "info": "",
       "sizes": {
-        "zoom": {
-          "width": 100,
-          "height": 100
-        },
-        "large": {
-          "width": 1023,
-          "height": 1200
-        },
-        "medium": {
-          "width": 767,
-          "height": 900
-        },
-        "small": {
-          "width": 512,
-          "height": 600
-        }
+          "zoom": {
+            "width": 100,
+            "height": 100
+          },
+          "large": {
+            "width": 1023,
+            "height": 1200
+          },
+          "medium": {
+            "width": 767,
+            "height": 900
+          },
+          "small": {
+            "width": 512,
+            "height": 600
+          }
         }
     },
     {
-      "src": "../../assets/gallery/paintings/Italy_",
-      "title": "Italy",
-      "date": "2008",
+      "src": "../../assets/gallery/paintings/Somnolence_",
+      "title": "Somnolence",
+      "date": "2013",
       "description": "Oil on Canvas | 6' x 4'",
       "arrows": "light",
       "info": "",
       "sizes": {
-        "zoom": {
-          "width": 100,
-          "height": 100
-        },
-        "large": {
-          "width": 1498,
-          "height": 1200
-        },
-        "medium": {
-          "width": 1100,
-          "height": 881
-        },
-        "small": {
-          "width": 749,
-          "height": 600
-        }
+          "zoom": {
+            "width": 100,
+            "height": 100
+          },
+          "large": {
+            "width": 1498,
+            "height": 1200
+          },
+          "medium": {
+            "width": 1100,
+            "height": 881
+          },
+          "small": {
+            "width": 749,
+            "height": 600
+          }
         }
     },
     {
@@ -60,22 +60,22 @@
       "arrows": "light",
       "info": "",
       "sizes": {
-        "zoom": {
-          "width": 100,
-          "height": 100
-        },
-        "large": {
-          "width": 1446,
-          "height": 1200
-        },
-        "medium": {
-          "width": 1085,
-          "height": 900
-        },
-        "small": {
-          "width": 723,
-          "height": 600
-        }
+          "zoom": {
+            "width": 100,
+            "height": 100
+          },
+          "large": {
+            "width": 1446,
+            "height": 1200
+          },
+          "medium": {
+            "width": 1085,
+            "height": 900
+          },
+          "small": {
+            "width": 723,
+            "height": 600
+          }
         }
     }
   ]
