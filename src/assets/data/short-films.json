@@ -1,0 +1,16 @@
+{
+  "sizes": {
+      "large": {
+        "width": 1200,
+        "height": 361
+      },
+      "medium": {
+        "width": 900,
+        "height": 383
+      },
+      "small": {
+        "width": 600,
+        "height": 256
+      }
+    }
+}

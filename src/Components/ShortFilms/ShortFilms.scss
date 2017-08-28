@@ -1,20 +1,37 @@
+.short-films {
+  max-width: 1200px !important;
+  top: 15px;
+}
+
 .film-section {
   color: white !important;
+  padding-bottom: 75px;
+}
+
+.banner-image {
+  width: 100%;
+  height: 100%
+}
+
+.film-info {
+  padding-left: 12px;
+  // margin-left: 15px;
 }
 
 .title {
   font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: 1.25rem;
-  letter-spacing: 5px;
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: 2.5px;
   color: white;
+  margin-top: 0;
   margin-bottom: 0px;
 }
 
 .year {
   font-family: 'Libre Baskerville', serif;
   font-weight: 700;
-  font-size: .65rem;
+  font-size: .70rem;
   letter-spacing: 5px;
   color: white;
 }
