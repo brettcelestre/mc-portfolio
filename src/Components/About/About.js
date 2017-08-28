@@ -11,8 +11,8 @@ class About extends Component {
         <div className="row">
           <img
             src={bioImage}
-            width={1500}
-            height={1077}
+            width={750}
+            height={538}
             className="bio-image"
             alt="picture"
           />
