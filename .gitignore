@@ -6,6 +6,8 @@ notes.txt
 #images
 *.jpg
 *.svg
+*.wav
+*.mp3
 
 #styles produced from scss files
 *.css
