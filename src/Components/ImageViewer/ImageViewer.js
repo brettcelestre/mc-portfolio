@@ -4,18 +4,14 @@ import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types'
 import { withRouter } from 'react-router'
 
-// import keydown, { Keys } from 'react-keydown';
-// import Image from 'react-image-resizer';
-// import Img from 'react-image'
 import './ImageViewer.css';
 import Toolbar from '../Toolbar/Toolbar.js';
 
 const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
-  stipplings: require('../../assets/data/stipplings.js')
+  stipplings: require('../../assets/data/stipplings.js'),
+  crossHatchings: require('../../assets/data/cross-hatchings.js'),
 };
-// import paintings from '../../assets/data/paintings.js';
-// import stipplings from '../../assets/data/stipplings.js';
 
 const artwork = {
   "paintings": {
@@ -81,7 +77,29 @@ const artwork = {
       medium: require('../../assets/gallery/stipplings/Midlife_Crisis_Medium.jpg'),
       large: require('../../assets/gallery/stipplings/Midlife_Crisis_Large.jpg')
     }
-  }
+  },
+  "crossHatchings": {
+    "Dewitt Study 4": {
+      small: require('../../assets/gallery/crossHatchings/De_Wit_Study_IV_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_IV_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/De_Wit_Study_IV_Large.jpg')
+    },
+    "Dewitt Study 3": {
+      small: require('../../assets/gallery/crossHatchings/De_Wit_Study_III_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_III_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/De_Wit_Study_III_Large.jpg')
+    },
+    "Dewitt Study 2": {
+      small: require('../../assets/gallery/crossHatchings/De_Wit_Study_II_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_II_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/De_Wit_Study_II_Large.jpg')
+    },
+    "Dewitt Study 1": {
+      small: require('../../assets/gallery/crossHatchings/De_Wit_Study_I_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_I_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/De_Wit_Study_I_Large.jpg')
+    }
+  },
 };
 
 // Stores choosen gallery
@@ -135,9 +153,17 @@ class ImageViewer extends Component {
 
   constructor(props){
     super(props)
+    
+    const currentPath = props.location.pathname.split('/')[2];
+    if ( currentPath === 'cross-hatchings' ) {
+      choosenGallery = 'crossHatchings';
+    } else {
+      choosenGallery = currentPath;
+    }
+
     this.state = {
       index: 0,
-      gallery: props.location.pathname.split('/')[2],
+      gallery: choosenGallery,
       galleryLength: 0,
       name: '',
       src: '',
@@ -149,8 +175,6 @@ class ImageViewer extends Component {
       loading: '"../../assets/svg/load-c.svg"'
     }
 
-    const currentPath = props.location.pathname.split('/')[2];
-    choosenGallery = currentPath;
 
     this.windowSize = this.windowSize.bind(this);
     this.galleryWheel = this.galleryWheel.bind(this);
@@ -175,13 +199,10 @@ class ImageViewer extends Component {
       console.log('medium', width);
 
 
-
       // TODO: Run resizeImage
       // document.getElementsByClassName('gallery-image').imageFitWindow({offsetY: 75});
       // $('.gallery-image').imageFitWindow({offsetY: 75});
       // select 'gallery-image' and run .imageFitWindow({offsetY: SIZE OF TOOLBAR});
-
-
 
 
     // TODO: Also height
@@ -232,10 +253,18 @@ class ImageViewer extends Component {
   render() {
     const currentArray = this.props.location.pathname.split('/');
     const currentGallery = currentArray[currentArray.length - 1];
+
+    console.log(' target = ', currentGallery);
     
     // Updates current gallery
+    // TODO REFACTOR - make fn which returns correct format
     if ( currentGallery !== this.state.gallery ) {
-      choosenGallery = currentGallery;
+      if ( currentGallery === 'cross-hatchings' ) {
+        console.log('cross-hatchings RANNNN');
+        choosenGallery = 'crossHatchings';
+      } else {
+        choosenGallery = currentGallery;
+      }
     }
     
     const { match, location, history } = this.props;
