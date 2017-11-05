@@ -8,7 +8,7 @@ class Links extends Component {
   render() {
     const linkItems = links.map((link, i) => {
       return (
-        <a href={link.url} key={i}>
+        <a href={link.url} target='blank' key={i}>
           <div className='linkItem'>
             <h2 className='title'>{link.title}</h2>
             <h4 className='description'>{link.description}</h4>
