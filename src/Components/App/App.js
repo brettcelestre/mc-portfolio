@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import './App.css';
 
@@ -13,7 +13,6 @@ class App extends Component {
     };
     this.artworkMenuEnter = this.artworkMenuEnter.bind(this);
     this.artworkMenuLeave = this.artworkMenuLeave.bind(this);
-    this.artworkGallerySelector = this.artworkGallerySelector.bind(this);
   }
 
   // Displays Dropdown
@@ -25,19 +24,12 @@ class App extends Component {
     this.setState({artmenu: false});
   }
 
-  artworkGallerySelector(medium) {
-    this.setState({medium: medium});
-    console.log(medium);
-    console.log(this.state.medium);
-  }
-
   render() {
-
     return (
       <div className="App">
 
         <div className="App-header">
-          <div className=" container">
+          <div className="container">
 
             <div className="u-full-width">
               <Link to="/home"><h2 className="mainTitle">Matthew Celestre</h2></Link>
@@ -45,11 +37,11 @@ class App extends Component {
 
             <div className="navigation u-full-width">
               <div className="option"
-                  onMouseEnter={this.artworkMenuEnter}
-                  onMouseLeave={this.artworkMenuLeave}>
+                   onMouseEnter={this.artworkMenuEnter}
+                   onMouseLeave={this.artworkMenuLeave}>
                 Artwork
                 <div className={`artmenu ${this.state.artmenu ? 'visible' : ''}`}>
-                  <Link to="/artwork/paintings" onClick={() => this.artworkGallerySelector('painting')}><div>Paintings</div></Link>
+                  <Link to='/artwork/paintings'><div>Paintings</div></Link>
                   <Link to="/artwork/stipplings"><div>Stipplings</div></Link>
                   <Link to="/artwork/cross-hatchings"><div>Cross Hatchings</div></Link>
                   <Link to="/artwork/drawings"><div>Drawings</div></Link>
