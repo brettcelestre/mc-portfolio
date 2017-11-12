@@ -11,6 +11,7 @@ const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
   stipplings: require('../../assets/data/stipplings.js'),
   crossHatchings: require('../../assets/data/cross-hatchings.js'),
+  drawings: require('../../assets/data/drawings.js')
 };
 
 const artwork = {
@@ -100,6 +101,23 @@ const artwork = {
       large: require('../../assets/gallery/crossHatchings/De_Wit_Study_I_Large.jpg')
     }
   },
+  "drawings": {
+    "The Grotesque Master": {
+      small: require('../../assets/gallery/drawings/The_Grotesque_Master_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/The_Grotesque_Master_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/The_Grotesque_Master_Large.jpg')
+    },
+    "Rosebud": {
+      small: require('../../assets/gallery/drawings/Rosebud_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Rosebud_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Rosebud_Large.jpg')
+    },
+    "Ambien Nights": {
+      small: require('../../assets/gallery/drawings/Ambien_Nights_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Ambien_Nights_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Ambien_Nights_Large.jpg')
+    }
+  }
 };
 
 // Stores choosen gallery
