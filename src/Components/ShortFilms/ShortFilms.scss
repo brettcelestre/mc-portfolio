@@ -1,6 +1,15 @@
+@import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Playfair+Display:400,700);
+
 .short-films {
-  max-width: 1200px !important;
+  position: relative;
+  width: 100%;
   top: 15px;
+  max-width: 1200px !important;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+  margin-top: 65px;
+  cursor: pointer;
 }
 
 .film-section {
@@ -15,20 +24,19 @@
 
 .film-info {
   padding-left: 12px;
-  // margin-left: 15px;
 }
 
-.title {
+.film-title {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   letter-spacing: 2.5px;
   color: white;
   margin-top: 0;
   margin-bottom: 0px;
 }
 
-.year {
+.film-year {
   font-family: 'Libre Baskerville', serif;
   font-weight: 700;
   font-size: .70rem;
@@ -36,6 +44,49 @@
   color: white;
 }
 
-.runtime {
+.theatre {
+  display:block;
+  margin: auto;
+  position: fixed;
+  top: 75px;
+  z-index: 9;
+  width: 100%;
+  height: -webkit-calc(100vh - 75px);
+  height:    -moz-calc(100vh - 75px);
+  height:         calc(100vh - 75px);
+  color: white;
+  background-color: rgb(0, 0, 0);
+}
+#screen {
+  height: 100%;
+  width: 100%;
+}
+.youtube-video {
+  height: -webkit-calc(100% - 95px);
+  width: 100%;
+}
+.theatre-close {
+  display:none;
+}
+.theatre-exit {
+  display: table;
+  height: 45px;
+  width: 75px;
+  float: right;
+  cursor: pointer;
+}
+.x {
+  display: table-cell;
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 1rem;
+  letter-spacing: 5px;
+  text-align: center;
+  vertical-align: middle;
 
+  &:hover{
+    color: #e6e6e6;
+    background-color: #161616;
+    cursor: pointer;
+  }
 }

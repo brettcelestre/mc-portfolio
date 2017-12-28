@@ -4,7 +4,7 @@ module.exports = {
       {
         "title": "Vivian",
         "date": "2016",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {
@@ -29,7 +29,7 @@ module.exports = {
       {
         "title": "For Faye",
         "date": "2016",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {
@@ -54,7 +54,7 @@ module.exports = {
       {
         "title": "Rowland S. Howard",
         "date": "2016",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {
@@ -79,7 +79,7 @@ module.exports = {
       {
         "title": "Jezebel",
         "date": "2016",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {
@@ -104,7 +104,7 @@ module.exports = {
     //   {
     //     "title": "From The Cradle To Till The Grave",
     //     "date": "2013",
-    //     "description": "Ultra Fine Sharpies",
+    //     "description": "ULTRA FINE SHARPIES",
     //     "arrows": "dark",
     //     "info": "",
     //     "sizes": {
@@ -129,7 +129,7 @@ module.exports = {
     {
         "title": "Our Prayer",
         "date": "2012",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {
@@ -154,7 +154,7 @@ module.exports = {
       {
         "title": "Midlife Crisis",
         "date": "2012",
-        "description": "Ultra Fine Sharpies",
+        "description": "ULTRA FINE SHARPIES",
         "arrows": "dark",
         "info": "",
         "sizes": {

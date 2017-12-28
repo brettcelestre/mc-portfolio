@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { WindowResizeListener } from 'react-window-resize-listener';
 import './ShortFilms.css';
 
+import youtubeWidth from './ShortFilms.css';
+
 const filmData = require('../../assets/data/short-films.json');
 
 const filmsSRC = {
@@ -28,8 +30,7 @@ class ShortFilms extends Component {
     this.setState({
       width: filmData.sizes[this.state.currentSize].width,
       height: filmData.sizes[this.state.currentSize].height
-  });
-    console.log('short films will mount');
+    });
   }
 
   constructor(props){
@@ -37,10 +38,14 @@ class ShortFilms extends Component {
     this.state = {
       currentSize: 'large',
       width: 0,
-      height: 0
+      height: 0,
+      videoUrl: '',
+      theatreMode: false
     }
 
     this.windowSize = this.windowSize.bind(this);
+    this.playFilm = this.playFilm.bind(this);
+    this.closeTheatre = this.closeTheatre.bind(this);
   }
 
   windowSize(width, height) {
@@ -65,11 +70,38 @@ class ShortFilms extends Component {
     }
   }
 
+  playFilm(film) {
+    switch(film){
+      case 'del-rio':
+        this.setState({
+          videoUrl: "https://www.youtube.com/embed/h8nbA3BLtbI?rel=0&showinfo=0&autoplay=1&version=3&enablejsapi=1",
+          theatreMode: true });
+        break;
+      case 'ballroom':
+        this.setState({
+          videoUrl: "https://www.youtube.com/embed/qSpbsE7gabM?rel=0&amp;showinfo=0&autoplay=1&enablejsapi=1",
+          theatreMode: true });
+        break;
+      case 'gavin':
+        this.setState({
+          videoUrl: "https://www.youtube.com/embed/KCizRihPlU0?rel=0&amp;showinfo=0&autoplay=1&enablejsapi=1",
+          theatreMode: true });
+        break;
+    }
+  }
+
+  closeTheatre(){
+    // Turns screen off
+    this.setState({theatreMode: false});
+    // Stops youtube video from playing
+    let div = document.getElementById("screen");
+    let iframe = div.getElementsByTagName("iframe")[0].contentWindow;
+    iframe.postMessage('{"event":"command","func":"pauseVideo","args":""}','*');
+  }
+
   render() {
-
-
     return (
-      <div className="container short-films">
+      <div>
         <WindowResizeListener
           /*
           TODO: Get debounce to work. Currently at 100
@@ -80,42 +112,59 @@ class ShortFilms extends Component {
           }
         }/>
 
-        <div className="row film-section">
-          <img
-            src={filmsSRC["Del Rio"][this.state.currentSize]}
-            width={this.state.width}
-            height={this.state.height}
-            alt="Del Rio"
-            className="banner-image"/>
-          <div className="film-info">
-            <h1 className="title">Del Rio</h1>
-            <span className="year">2014 - 8:24</span>
+        <div className="short-films">
+          <div className="row film-section" onClick={()=>{this.playFilm('del-rio')}}>
+            <img
+              src={filmsSRC["Del Rio"][this.state.currentSize]}
+              width={this.state.width}
+              height={this.state.height}
+              alt="Del Rio"
+              className="banner-image"/>
+            <div className="film-info">
+              <h1 className="film-title">Del Rio</h1>
+              <span className="film-year">2014 - 8:24</span>
+            </div>
+          </div>
+
+          <div className="row film-section" onClick={()=>{this.playFilm('ballroom')}}>
+            <img
+              src={filmsSRC["Ballroom Dance Floor"][this.state.currentSize]}
+              width={this.state.width}
+              height={this.state.height}
+              alt="Ballroom Dance Floor"
+              className="banner-image"/>
+            <div className="film-info">
+              <h1 className="film-title">Ballroom Dance Floor</h1>
+              <span className="film-year">2011 - 3:19</span>
+            </div>
+          </div>
+
+          <div className="row film-section" onClick={()=>{this.playFilm('gavin')}}>
+            <img
+              src={filmsSRC["Justin Felix vs. Gavin Drago"][this.state.currentSize]}
+              width={this.state.width}
+              height={this.state.height}
+              alt="Ballroom Dance Floor"
+              className="banner-image"/>
+            <div className="film-info">
+              <h1 className="film-title">Justin Felix vs Gavin Drago</h1>
+              <span className="film-year">2010 - 1:38</span>
+            </div>
           </div>
         </div>
 
-        <div className="row film-section">
-          <img
-            src={filmsSRC["Ballroom Dance Floor"][this.state.currentSize]}
-            width={this.state.width}
-            height={this.state.height}
-            alt="Ballroom Dance Floor"
-            className="banner-image"/>
-          <div className="film-info">
-            <h1 className="title">Ballroom Dance Floor</h1>
-            <span className="year">2012 - 3:19</span>
-          </div>
-        </div>
 
-        <div className="row film-section">
-          <img
-            src={filmsSRC["Justin Felix vs. Gavin Drago"][this.state.currentSize]}
-            width={this.state.width}
-            height={this.state.height}
-            alt="Ballroom Dance Floor"
-            className="banner-image"/>
-          <div className="film-info">
-            <h1 className="title">Justin Felix vs Gavin Drago</h1>
-            <span className="year">2010 - 1:38</span>
+        <div className={`theatre ${this.state.theatreMode ? '' : 'theatre-close'}`}>
+          <div className="theatre-exit" onClick={this.closeTheatre}>
+            <div className="x">Exit</div>
+          </div>
+          <div id="screen">
+            <iframe
+              className="youtube-video"
+              src={this.state.videoUrl}
+              frameBorder="0"
+              allowFullScreen>
+            </iframe>
           </div>
         </div>
       </div>

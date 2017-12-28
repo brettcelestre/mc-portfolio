@@ -1,4 +1,29 @@
 
+.zoom-box {
+  margin-top: 1px;
+  // position: absolute;
+  width: 100%;
+  height: -webkit-calc(100% - 151px);
+  height:    -moz-calc(100% - 151px);
+  height:         calc(100% - 151px);
+  padding-bottom: 76px;
+  // height: 100%;
+  z-index: 3;
+  &:hover {
+    cursor: zoom-out;
+  }
+}
+
+.zoom-box-hide {
+  display: none;
+}
+
+.zoom-image {
+  display:block;
+  margin: auto;
+  z-index: 8;
+}
+
 .image-viewer {
   overflow-y: hidden !important;
 }
@@ -11,6 +36,10 @@
   height: -webkit-calc(100% - 151px);
   height:    -moz-calc(100% - 151px);
   height:         calc(100% - 151px);
+}
+
+.image-hide {
+  display: none;
 }
 
 .image-controls {
@@ -32,7 +61,7 @@
   width: 50%;
   opacity: 0.25;
   &:hover {
-    cursor: pointer;
+    cursor: w-resize;
   }
 }
 
@@ -50,7 +79,7 @@
   width: 50%;
   opacity: 0.25;
   &:hover {
-    cursor: pointer;
+    cursor: e-resize;
   }
 }
 

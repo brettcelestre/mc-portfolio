@@ -1,6 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Libre+Baskerville:700|Playfair+Display:400,700);
 
-.outer {
+.toolbar {
   z-index: 10;
   background-color: #161616;
   margin: 0;
@@ -9,17 +9,13 @@
   height: 75px;
   position: fixed !important;
   bottom: 0;
-}
-
-.toolbar {
-  width: 65%;
   color: white;
 }
 
 .title-year {
-  margin-top: 8px;
+  height: 75px;
   padding-left: 14px;
-  padding-top: 8px;
+  padding-top: 16px;
   text-align: left;
 }
 
@@ -29,7 +25,6 @@
   font-size: 1.25rem;
   letter-spacing: 5px;
   margin-top: 5px;
-  // line-height: 1rem;
 }
 .year {
   font-family: 'Libre Baskerville', serif;
@@ -51,11 +46,35 @@
   letter-spacing: 5px;
 }
 
-.galleryIndex {
+.tools {
+  display: inline-block;
+}
+
+.zoom-button {
+  width: 70px;
+  height: 75px;
+  // -webkit-mask: url(http://brettcelestre.com/code/stocksight/ios-minus-empty.svg) no-repeat 50% 50%;
+  // mask: url(http://brettcelestre.com/code/stocksight/ios-minus-empty.svg) no-repeat 50% 50%;
+  -webkit-mask-size: cover;
+  text-align: center;
+  mask-size: cover;
+  color: white;
+  padding-top: 16px;
   float: right;
+  &:hover {
+    background-color: #1f1f1f;
+    cursor: zoom-in;
+  }
+}
+
+.gallery-index {
+  width: 70px;
+  height: 75px;
   font-family: 'Libre Baskerville', serif;
   font-weight: 700;
   font-size: .65rem;
+  text-align: center;
   letter-spacing: 5px;
-  margin-top: 20px;
+  padding-top: 24px;
+  float: right;
 }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 // import './Home.css';
 
-import Gallery from '../Gallery/Gallery.js';
+// import Gallery from '../Gallery/Gallery.js';
 
 class Home extends Component {
 
