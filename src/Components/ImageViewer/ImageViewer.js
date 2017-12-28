@@ -204,7 +204,7 @@ class ImageViewer extends Component {
   // Move into utils. Possibly not since there is a setState inside
   windowSize(width, height) {
     // Makes sure you're not zoomed in
-    // if (!this.state.zoom) {
+    if (!this.state.zoom) {
       // Large
       if ( width >= 1100 && this.state.currentSize !== 'large' ) {
         this.setState({currentSize: 'large'});
@@ -235,33 +235,30 @@ class ImageViewer extends Component {
         // TODO: Run resizeImage
         // fitImage
       }
-    // }
+    }
   }
 
   galleryWheel(direction) {
-    // Makes sure you're not zoomed in
-    // if (!this.state.zoom) {
-      switch(direction) {
-        case 'previous':
-          if ( this.state.index > 0 ) {
-            --this.state.index;
-          }
-          break;
-        case 'next':
-          if ( this.state.index < (galleryData[this.state.gallery].data.length-1) ) {
-            ++this.state.index;
-          }
-          break;
-      }
-      this.setState({
-        index: this.state.index,
-        name: galleryData[this.state.gallery].data[this.state.index].title,
-        description: galleryData[this.state.gallery].data[this.state.index].description,
-        date: galleryData[this.state.gallery].data[this.state.index].date,
-        width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
-        height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height
-      });
-    // }
+    switch(direction) {
+      case 'previous':
+        if ( this.state.index > 0 ) {
+          --this.state.index;
+        }
+        break;
+      case 'next':
+        if ( this.state.index < (galleryData[this.state.gallery].data.length-1) ) {
+          ++this.state.index;
+        }
+        break;
+    }
+    this.setState({
+      index: this.state.index,
+      name: galleryData[this.state.gallery].data[this.state.index].title,
+      description: galleryData[this.state.gallery].data[this.state.index].description,
+      date: galleryData[this.state.gallery].data[this.state.index].date,
+      width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
+      height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height
+    });
   }
 
   // left - 37
@@ -279,7 +276,8 @@ class ImageViewer extends Component {
 
     if (this.state.zoom) {
       this.setState({
-        zoom: false
+        zoom: false,
+        currentSize: 'large'
       });
     } else {
       this.setState({

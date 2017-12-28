@@ -21,6 +21,10 @@ body {
   }
 }
 
+.menu-button {
+  display: none;
+}
+
 .App {
   text-align: center;
   margin: 0;
@@ -50,7 +54,7 @@ li {
 .artmenu{
   background-color: #161616;
   position: absolute;
-  top: 64px;
+  // top: 64px;
   display: none;
   width: 158px !important;
   list-style-type: none;
@@ -83,9 +87,12 @@ li {
   }
 }
 
+.navigation-mobile {
+  display: none;
+}
 .navigation {
   z-index: 9;
-  postion: relative;
+  position: relative;
   display: flex;
   width: 100%;
   align-items: center;
@@ -139,5 +146,110 @@ li {
     color: white;
     cursor: pointer;
     border-bottom: 2px solid #999;
+  }
+}
+
+@media only screen and (device-width: 518px),
+       only screen and (max-width: 518px) {
+  // and (orientation: landscape) 
+// @media (max-width: 414px) and (max-height: 736px) {
+
+  .menu-button {
+    display: block;
+    z-index: 111;
+    position: fixed;
+    top: 0;
+    right: 0;
+    float: right;
+    width: 80px;
+    height: 53px;
+    // background-color:  yellow;
+  }
+
+  .menu-icon {
+    padding: 7px;
+    fill: white;
+  }
+
+  .App-header {
+    top: 0;
+    z-index: 10;
+    margin-top: 0px;
+    position: fixed !important;
+    height: 53px;
+    width: 100%;
+    padding: 0px;
+    color: white;
+  }
+
+  .mainTitle {
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    text-align: left;
+    margin: 11px 0 7px 0;
+    padding-left: 15px;
+  }
+
+  .navigation {
+    display: none;
+    transition: all 0.2s ease-out;
+  }
+
+  .navigation-mobile {
+    z-index: 99;
+    position: fixed;
+    top: 53px;
+    display: inline-grid;
+    right: -240px;
+    padding-top: 22px;
+    width: 240px !important;
+    height: 100%;
+    background-color: #191919;
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: .9rem;
+    letter-spacing: 2px;
+    text-align: left;
+    line-height: 1.9rem;
+    color: white;
+    a {
+      width: 100%;
+      height: 50px;
+      margin: 0;
+      background-color:green;
+    }
+    a > li {
+      // width: 100%;
+      // height: 18px;
+      text-align: left;
+      padding-left: 22px;
+      color: white;
+    }
+    transition: all 0.2s ease-out;
+  }
+
+  .menu-show {
+    right: 0px;
+    transition: all 0.2s ease-out;
+  }
+
+  .fade-show {
+    z-index: 9;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(38, 38, 38, 0.9);
+    transition: all 0.2s ease-out;
+  }
+  
+  .fade-no-show {
+    display: none;
+    transition: all 0.2s ease-out;
   }
 }
