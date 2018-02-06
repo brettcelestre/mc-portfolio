@@ -1,3 +1,4 @@
+
 import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import ReactSVG from 'react-svg';
@@ -74,13 +75,15 @@ class App extends Component {
           </ul>
         </div>
 
-        <div className={this.state.fade ? "fade-show" : "fade-no-show"}></div>
+        <div className={this.state.fade ? "fade-show" : "fade-no-show"} onClick={this.menuToggle}></div>
 
         <div className="App-header">
           <div className="container">
 
             <div className="u-full-width">
-              <Link to="/home"><h2 className="mainTitle">Matthew Celestre</h2></Link>
+              {/* <Link to="/home"> */}
+              <h2 className="mainTitle">Matthew Celestre</h2>
+              {/* </Link> */}
             </div>
 
 
