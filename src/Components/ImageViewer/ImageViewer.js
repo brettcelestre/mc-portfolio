@@ -1,8 +1,9 @@
+
 import React, { Component } from 'react';
 import { WindowResizeListener } from 'react-window-resize-listener';
 import { Redirect } from 'react-router-dom';
-import PropTypes from 'prop-types'
-import { withRouter } from 'react-router'
+import PropTypes from 'prop-types';
+import { withRouter } from 'react-router';
 
 import './ImageViewer.css';
 import Toolbar from '../Toolbar/Toolbar.js';
@@ -131,6 +132,11 @@ class ImageViewer extends Component {
     history: PropTypes.object.isRequired
   }
 
+  componentDidMount() {
+    // Puts focus on image-viewer so arrow keys will change image
+    document.getElementsByClassName('image-viewer')[0].focus();
+  }
+
   componentWillMount() {
     this.setState({
       galleryLength: galleryData[this.state.gallery].data.length,
@@ -166,7 +172,8 @@ class ImageViewer extends Component {
         height: galleryData[choosenGallery].data[0].sizes[this.state.currentSize].height
       });
     }
-
+    // Puts focus on image-viewer so arrow keys will change image
+    document.getElementsByClassName('image-viewer')[0].focus();
   }
 
   constructor(props){
@@ -196,9 +203,10 @@ class ImageViewer extends Component {
 
     this.windowSize = this.windowSize.bind(this);
     this.galleryWheel = this.galleryWheel.bind(this);
-    this.previous = this.previous.bind(this);
-    this.next = this.next.bind(this);
     this.zoomImageState = this.zoomImageState.bind(this);
+    this.next = this.next.bind(this);
+    this.previous = this.previous.bind(this);
+    this.onKeyPressed = this.onKeyPressed.bind(this);
   }
 
   // Move into utils. Possibly not since there is a setState inside
@@ -261,16 +269,6 @@ class ImageViewer extends Component {
     });
   }
 
-  // left - 37
-  previous() {
-    this.galleryWheel('previous');
-  }
-
-  // right - 39
-  next() {
-    this.galleryWheel('next');
-  }
-
   zoomImageState = () => {
     console.log('zoomImageState ran');
 
@@ -284,8 +282,23 @@ class ImageViewer extends Component {
         zoom: true
       });
     }
-
   }
+
+  previous() {
+    this.galleryWheel('previous');
+  }
+
+  next() {
+    this.galleryWheel('next');
+  }
+  
+  onKeyPressed(e) {
+    if ( e.keyCode == '37' && this.state.zoom == false) this.galleryWheel('previous');
+    if ( e.keyCode == '39' && this.state.zoom == false) this.galleryWheel('next');
+    if ( e.keyCode == '187' || e.keyCode == '189' && this.state.zoom == false) this.zoomImageState();
+    console.log(e.keyCode);
+  }
+
 
   render() {
     const currentArray = this.props.location.pathname.split('/');
@@ -307,7 +320,7 @@ class ImageViewer extends Component {
     const { match, location, history } = this.props;
 
     return (
-      <div className="image-viewer">
+      <div className="image-viewer" onKeyDown={this.onKeyPressed} tabIndex="0">
         <WindowResizeListener
           /*
           TODO: Get debounce to work. Currently at 100
@@ -320,11 +333,22 @@ class ImageViewer extends Component {
 
         <div className={this.state.zoom ? "zoom-box" : "zoom-box-hide"} onClick={this.zoomImageState}>
           <img
-            src={artwork[this.state.gallery][this.state.name][this.state.currentSize]}
+            src={artwork[this.state.gallery][this.state.name]['large']}
             width={galleryData[this.state.gallery].data[this.state.index].sizes['large'].width}
             height={galleryData[this.state.gallery].data[this.state.index].sizes['large'].height}
             className="zoom-image"
             alt="picture"
+          />
+        </div>
+
+        <div className={this.state.zoom ? "image-hide" : "image"}>
+          <img
+            src={artwork[this.state.gallery][this.state.name][this.state.currentSize]}
+            width={this.state.width}
+            height={this.state.height}
+            className="gallery-image"
+            alt="picture"
+            onClick={this.zoomImageState}
           />
         </div>
 
@@ -346,16 +370,6 @@ class ImageViewer extends Component {
           </div>
         </div>
 
-        <div className={this.state.zoom ? "image-hide" : "image"}>
-          <img
-            src={artwork[this.state.gallery][this.state.name][this.state.currentSize]}
-            width={this.state.width}
-            height={this.state.height}
-            className="gallery-image"
-            alt="picture"
-          />
-        </div>
-
         <Toolbar 
           imageData={this.state} 
           imageZoom={this.zoomImageState}/>
@@ -367,3 +381,9 @@ class ImageViewer extends Component {
 export default ImageViewer;
 
 /* src={paintingsSRC[this.state.name][this.state.currentSize]} */
+
+// window.onload = function() {
+  
+//      document.getElementById('search').getElementsByTagName('input')[0].focus();
+  
+//   }
