@@ -270,8 +270,6 @@ class ImageViewer extends Component {
   }
 
   zoomImageState = () => {
-    console.log('zoomImageState ran');
-
     if (this.state.zoom) {
       this.setState({
         zoom: false,
@@ -296,15 +294,12 @@ class ImageViewer extends Component {
     if ( e.keyCode == '37' && this.state.zoom == false) this.galleryWheel('previous');
     if ( e.keyCode == '39' && this.state.zoom == false) this.galleryWheel('next');
     if ( e.keyCode == '187' || e.keyCode == '189' && this.state.zoom == false) this.zoomImageState();
-    console.log(e.keyCode);
   }
-
 
   render() {
     const currentArray = this.props.location.pathname.split('/');
     const currentGallery = currentArray[currentArray.length - 1];
-
-    console.log(' target = ', currentGallery);
+    window.addEventListener("keydown", this.onKeyPressed, true);
     
     // Updates current gallery
     // TODO REFACTOR - make fn which returns correct format
@@ -320,7 +315,7 @@ class ImageViewer extends Component {
     const { match, location, history } = this.props;
 
     return (
-      <div className="image-viewer" onKeyDown={this.onKeyPressed} tabIndex="0">
+      <div className="image-viewer" tabIndex="0">
         <WindowResizeListener
           /*
           TODO: Get debounce to work. Currently at 100
@@ -379,6 +374,15 @@ class ImageViewer extends Component {
 }
 
 export default ImageViewer;
+
+// const test = (text) => {
+//   console.log('suppppp', text);
+// }
+
+// ImageViewer.onKeyPressed
+
+// window.addEventListener("keydown", test, true);
+// window.addEventListener("keydown", handle, true);
 
 /* src={paintingsSRC[this.state.name][this.state.currentSize]} */
 
