@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import './Music.css';
 
 import music from '../../assets/data/music.js';
@@ -15,6 +16,11 @@ class Music extends Component {
     console.log('MUSIC DATA ===', this.state.musicData);
 
     this.buildAlbum = this.buildAlbum.bind(this);
+    this.listen = this.listen.bind(this);
+  }
+
+  listen(title) {
+    console.log(title);
   }
 
   buildPlayer(album){
@@ -35,18 +41,26 @@ class Music extends Component {
     const results = this.state.musicData.map((data, i) => {
       const largeCover = require(`../../assets/music/${data.path}/Cover_Large.jpg`);
       // const largeSmall = require(`../../assets/music/${data.path}/Cover_Small.jpg`);
+      
+      // onClick={() => this.listen(data.title)}
+
+      const albumString = data.title.toLowerCase().split(' ').join('-');
+      console.log('albumString = ', albumString);
+      const musicPath = `/music/album/${albumString}`;
 
       return (
-        <div className="album" key={i}>
-          <div className="cover-art">
-            <img src={largeCover} />
+        <Link to={musicPath}>
+          <div className="album" key={i}>
+            <div className="cover-art">
+              <img src={largeCover} />
+            </div>
+            <div className="description">
+              <h1>{data.title}</h1>
+              <h2>{data.band}</h2>
+              <h2>{data.year} | {data.type}</h2>
+            </div>
           </div>
-          <div className="description">
-            <h1>{data.title}</h1>
-            <h2>{data.band}</h2>
-            <h2>{data.year} | {data.type}</h2>
-          </div>
-        </div>
+        </Link>
       )
     });
 

@@ -14,6 +14,7 @@ import Home from './Components/Home/Home.js';
 import Links from './Components/Links/Links.js';
 import Store from './Components/Store/Store.js';
 import Music from './Components/Music/Music.js';
+import MusicPlayer from './Components/MusicPlayer/MusicPlayer.js';
 import ImageViewer from './Components/ImageViewer/ImageViewer.js';
 import ShortFilms from './Components/ShortFilms/ShortFilms.js';
 
@@ -25,6 +26,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/artwork/:medium" component={ImageViewer} />
         <Route name="short-films" path="/short-films" component={ShortFilms} />
+        <Route name="album" path="/music/album/:album" component={MusicPlayer} />
         <Route name="music" path="/music" component={Music} />
         <Route name="store" path="/store" component={Store} />
         <Route name="links" path="/links" component={Links} />
