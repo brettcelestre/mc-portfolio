@@ -344,6 +344,7 @@ class ImageViewer extends Component {
             className="gallery-image"
             alt="picture"
             onClick={this.zoomImageState}
+            draggable="true"
           />
         </div>
 
