@@ -33,16 +33,12 @@ class Music extends Component {
     //     <li>{track}</li>
     //   );
     // });
-  
     // console.log('trackList = ', trackList);
   }
 
   buildAlbum() {
     const results = this.state.musicData.map((data, i) => {
       const largeCover = require(`../../assets/music/${data.path}/Cover_Large.jpg`);
-      // const largeSmall = require(`../../assets/music/${data.path}/Cover_Small.jpg`);
-      
-      // onClick={() => this.listen(data.title)}
 
       const albumString = data.title.toLowerCase().split(' ').join('-');
       console.log('albumString = ', albumString);
@@ -50,14 +46,14 @@ class Music extends Component {
 
       return (
         <Link to={musicPath}>
-          <div className="album" key={i}>
-            <div className="cover-art">
-              <img src={largeCover} />
-            </div>
+          <div className="album six columns" key={i}>
+            <img 
+              src={largeCover}
+              className="cover-art" />
             <div className="description">
               <h1>{data.title}</h1>
               <h2>{data.band}</h2>
-              <h2>{data.year} | {data.type}</h2>
+              <h2 className="year">{data.year} | {data.type}</h2>
             </div>
           </div>
         </Link>

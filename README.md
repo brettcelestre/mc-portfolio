@@ -1,6 +1,13 @@
 ## Matthew Celestre's Portfolio
 
+- [Run Locally](#to-run-locally)
 - [Folder Structure](#folder-structure)
+
+## Run Locally
+```
+npm start
+npm run watch-css
+```
 
 ## Folder Structure
 
