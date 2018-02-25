@@ -69,6 +69,11 @@ const artwork = {
       medium: require('../../assets/gallery/stipplings/Jezebel_Medium.jpg'),
       large: require('../../assets/gallery/stipplings/Jezebel_Large.jpg')
     },
+    "From The Craddle To The Grave": {
+      small: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Small.jpg'),
+      medium: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Medium.jpg'),
+      large: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Large.jpg')
+    },
     "Our Prayer": {
       small: require('../../assets/gallery/stipplings/Our_Prayer_Small.jpg'),
       medium: require('../../assets/gallery/stipplings/Our_Prayer_Medium.jpg'),
@@ -81,6 +86,31 @@ const artwork = {
     }
   },
   "crossHatchings": {
+    "Elderly Woman Study": {
+      small: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Large.jpg')
+    },
+    "Girl With Flowers": {
+      small: require('../../assets/gallery/crossHatchings/Girl_With_Flowers_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Girl_With_Flowers_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Girl_With_Flowers_Large.jpg')
+    },
+    "Opulence": {
+      small: require('../../assets/gallery/crossHatchings/Opulence_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Opulence_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Opulence_Large.jpg')
+    },
+    "Lady Study": {
+      small: require('../../assets/gallery/crossHatchings/Lady_Study_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Lady_Study_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Lady_Study_Large.jpg')
+    },
+    "Man Study": {
+      small: require('../../assets/gallery/crossHatchings/Man_Study_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Man_Study_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Man_Study_Large.jpg')
+    },
     "Dewitt Study 4": {
       small: require('../../assets/gallery/crossHatchings/De_Wit_Study_IV_Small.jpg'),
       medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_IV_Medium.jpg'),
@@ -103,6 +133,41 @@ const artwork = {
     }
   },
   "drawings": {
+    "Rembrandt Study": {
+      small: require('../../assets/gallery/drawings/Rembrandt_Study_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Rembrandt_Study_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Rembrandt_Study_Large.jpg')
+    },
+    "Owl & Whiskey": {
+      small: require('../../assets/gallery/drawings/Owl_&_Whiskey_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Owl_&_Whiskey_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Owl_&_Whiskey_Large.jpg')
+    },
+    "Bunny On Bike": {
+      small: require('../../assets/gallery/drawings/Bunny_On_Bike_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Bunny_On_Bike_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Bunny_On_Bike_Large.jpg')
+    },
+    "Death Head Moth": {
+      small: require('../../assets/gallery/drawings/Death_Head_Moth_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Death_Head_Moth_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Death_Head_Moth_Large.jpg')
+    },
+    "To The Lost": {
+      small: require('../../assets/gallery/drawings/To_The_Lost_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/To_The_Lost_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/To_The_Lost_Large.jpg')
+    },
+    "Milo At War": {
+      small: require('../../assets/gallery/drawings/Milo_At_War_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Milo_At_War_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Milo_At_War_Large.jpg')
+    },
+    "Too Much On My Mind": {
+      small: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Large.jpg')
+    },
     "The Grotesque Master": {
       small: require('../../assets/gallery/drawings/The_Grotesque_Master_Small.jpg'),
       medium: require('../../assets/gallery/drawings/The_Grotesque_Master_Medium.jpg'),
@@ -178,8 +243,23 @@ class ImageViewer extends Component {
 
   constructor(props){
     super(props)
-    
+
+    // FROM ALBUM COMPONENT
+    // const currentAlbum = props.location.pathname.split('/')[3];
+    // function findAlbum(album) {
+    //   const target = album.path.split('/')[1].toString();
+    //   return currentAlbum == target;
+    // }
+    // this.state = {
+    //   album: music[music.findIndex(findAlbum)]
+    // }
+    console.log('=========================');
+    console.log('PROPS =', props.match.params.piece);
     const currentPath = props.location.pathname.split('/')[2];
+    console.log('IMAGE = ', props.match.params.piece);
+    console.log('currentPath = ', currentPath);
+
+
     if ( currentPath === 'cross-hatchings' ) {
       choosenGallery = 'crossHatchings';
     } else {
@@ -297,9 +377,15 @@ class ImageViewer extends Component {
   }
 
   render() {
-    const currentArray = this.props.location.pathname.split('/');
-    const currentGallery = currentArray[currentArray.length - 1];
     window.addEventListener("keydown", this.onKeyPressed, true);
+
+    // const currentArray = this.props.location.pathname.split('/');
+    // const currentGallery = currentArray[currentArray.length - 1];
+    const currentGallery = this.props.location.pathname.split('/')[2];
+    console.log('currentGallery from RENDER = ', currentGallery);
+    
+
+    console.log('IMAGE data = ', this.state);
     
     // Updates current gallery
     // TODO REFACTOR - make fn which returns correct format
@@ -332,7 +418,8 @@ class ImageViewer extends Component {
             width={galleryData[this.state.gallery].data[this.state.index].sizes['large'].width}
             height={galleryData[this.state.gallery].data[this.state.index].sizes['large'].height}
             className="zoom-image"
-            alt="picture"
+            alt={this.state.name}
+            title={this.state.name}
           />
         </div>
 
@@ -342,7 +429,8 @@ class ImageViewer extends Component {
             width={this.state.width}
             height={this.state.height}
             className="gallery-image"
-            alt="picture"
+            alt={this.state.name}
+            title={this.state.name}
             onClick={this.zoomImageState}
             draggable="true"
           />
@@ -351,14 +439,13 @@ class ImageViewer extends Component {
         <div className={this.state.zoom ? "image-hide" : "image-controls"}>
           <div
             className="previous"
-            onClick={this.previous}
-            onKeyDown={ this.myMethod } >
-            <img
+            onClick={this.previous}>
+            {/* <img
               src={require("../../assets/svg/ios-arrow-left.svg")}
               width="39px"
               height="175px"
               alt="previous"
-              className="previousSVG"/>
+              className="previousSVG"/> */}
           </div>
           <div
             className="next"

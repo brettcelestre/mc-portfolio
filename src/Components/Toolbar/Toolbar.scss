@@ -9,7 +9,7 @@
 }
 
 .toolbar {
-  z-index: 10;
+  z-index: 40;
   background-color: #161616;
   margin: 0;
   padding: 0;
@@ -104,12 +104,13 @@
   //   display: block;
   // }
 
-  .title {
+  // .title {
     
-  }
+  // }
 
   .description {
     padding-top: 8px;
+    margin: -5px 10px 40px -5px;
   }
 
   .title-year {
@@ -129,6 +130,7 @@
   .zoom-button {
     // position: fixed;
     float: right;
+    padding-right: 10px;
   }
 
   .zoom-icon path {

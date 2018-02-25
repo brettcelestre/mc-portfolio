@@ -10,7 +10,9 @@ class MusicPlayer extends Component {
 constructor(props){
   super(props)
 
-  const currentAlbum = props.location.pathname.split('/')[3];
+  console.log('IMAGE = ', props.match.params.album);
+  // const currentAlbum = props.location.pathname.split('/')[3];
+  const currentAlbum = props.match.params.album;
   
   function findAlbum(album) {
     const target = album.path.split('/')[1].toString();
@@ -33,8 +35,8 @@ buildPlayer() {
 }
 
 render() {
+  // Converts embeded soundcloud string into HTML
   const converter = new ReactHTMLConverter();
-  // const reactElement = htmlToReactParser.Parser.parse(this.state.album.embed);
 
   console.log('test album = ', this.state.album);
 

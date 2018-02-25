@@ -24,7 +24,8 @@ ReactDOM.render(
       <Route path="/" component={App}>
       </Route>
       <Switch>
-        <Route exact path="/artwork/:medium" component={ImageViewer} />
+        {<Route exact path="/artwork/:medium" component={ImageViewer} />}
+        {/* <Route exact path="/artwork/:medium/:piece" component={ImageViewer} /> */}
         <Route name="short-films" path="/short-films" component={ShortFilms} />
         <Route name="album" path="/music/album/:album" component={MusicPlayer} />
         <Route name="music" path="/music" component={Music} />

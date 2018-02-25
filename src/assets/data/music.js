@@ -5,7 +5,7 @@ module.exports = [
     year: '2018',
     type: 'EP',
     path: 'the-buttheads/self-titled',
-    embed: '',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/456960399&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals, Guitar: Matthew Celestre
       Drums: Ryan Schmidt
       All songs written by Matthew Celestre`,

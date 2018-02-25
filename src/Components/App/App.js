@@ -6,6 +6,13 @@ import ReactSVG from 'react-svg';
 import './App.css';
 const menuIcon = require('../../assets/svg/android-more-vertical.svg');
 
+const galleryData = {
+  paintings: require('../../assets/data/paintings.js'),
+  stipplings: require('../../assets/data/stipplings.js'),
+  crossHatchings: require('../../assets/data/cross-hatchings.js'),
+  drawings: require('../../assets/data/drawings.js')
+};
+
 class App extends Component {
 
   constructor(props) {
@@ -19,6 +26,7 @@ class App extends Component {
     this.artworkMenuEnter = this.artworkMenuEnter.bind(this);
     this.artworkMenuLeave = this.artworkMenuLeave.bind(this);
     this.menuToggle = this.menuToggle.bind(this);
+    this.createUrlPathForPiece = this.createUrlPathForPiece.bind(this);
   }
 
   // Displays Dropdown
@@ -47,7 +55,16 @@ class App extends Component {
     }
   }
 
+  createUrlPathForPiece(section, artwork) {
+
+    // console.log(' create url path section =', section);
+    // console.log(' create url path first piece title = ', galleryData[section].data[0].title.split(' ').join('-'));
+    // const pieceName = galleryData[section].data[0].title.split(' ').join('-');
+    // return artwork ? `/artwork/${section}/${pieceName}` : `DO THIS PART`;
+  }
+
   render() {
+    // console.log('createUrlPathForPiece(stipplings); ====', this.createUrlPathForPiece('crossHatchings'));
     return (
       <div className="App">
 
@@ -63,15 +80,15 @@ class App extends Component {
 
         <div className={this.state.mobileMenu ? "navigation-mobile menu-show" : "navigation-mobile"}>
           <ul>
-            <Link to='/artwork/paintings' onClick={this.menuToggle}><li>Paintings</li></Link>
-            <Link to="/artwork/stipplings" onClick={this.menuToggle}><li>Stipplings</li></Link>
-            <Link to="/artwork/cross-hatchings" onClick={this.menuToggle}><li>Cross Hatchings</li></Link>
-            <Link to="/artwork/drawings" onClick={this.menuToggle}><li>Drawings</li></Link>
-            <Link to="/short-films" onClick={this.menuToggle}><li>Short Films</li></Link>
-            <Link to="/music" onClick={this.menuToggle}><li>Music</li></Link>
-            <Link to="/store" onClick={this.menuToggle}><li>Store</li></Link>
-            <Link to="/about" onClick={this.menuToggle}><li>About</li></Link>
-            <Link to="/links" onClick={this.menuToggle}><li>Links</li></Link>
+            <Link to='/artwork/paintings' onClick={this.menuToggle} title="Paintings"><li>Paintings</li></Link>
+            <Link to="/artwork/stipplings" onClick={this.menuToggle} title="Stipplings"><li>Stipplings</li></Link>
+            <Link to="/artwork/cross-hatchings" onClick={this.menuToggle} title="Cross Hatchings"><li>Cross Hatchings</li></Link>
+            <Link to="/artwork/drawings" onClick={this.menuToggle} title="Drawings"><li>Drawings</li></Link>
+            <Link to="/short-films" onClick={this.menuToggle} title="Short Films"><li>Short Films</li></Link>
+            <Link to="/music" onClick={this.menuToggle} title="Music"><li>Music</li></Link>
+            <Link to="/store" onClick={this.menuToggle} title="Store"><li>Store</li></Link>
+            <Link to="/about" onClick={this.menuToggle} title="About"><li>About</li></Link>
+            <Link to="/links" onClick={this.menuToggle} title="Links"><li>Links</li></Link>
           </ul>
         </div>
 
@@ -90,28 +107,29 @@ class App extends Component {
             <div className="navigation">
               <div className="option"
                    onMouseEnter={this.artworkMenuEnter}
-                   onMouseLeave={this.artworkMenuLeave}>
+                   onMouseLeave={this.artworkMenuLeave}
+                   title="Artwork">
                 Artwork
                 <div className={`artmenu ${this.state.artmenu ? 'visible' : ''}`}>
-                  <Link to='/artwork/paintings'><div>Paintings</div></Link>
-                  <Link to="/artwork/stipplings"><div>Stipplings</div></Link>
-                  <Link to="/artwork/cross-hatchings"><div>Cross Hatchings</div></Link>
-                  <Link to="/artwork/drawings"><div>Drawings</div></Link>
+                  <Link to='/artwork/paintings'><div title="Paintings">Paintings</div></Link>
+                  <Link to="/artwork/stipplings"><div title="Stipplings">Stipplings</div></Link>
+                  <Link to="/artwork/cross-hatchings"><div title="Cross Hatchings">Cross Hatchings</div></Link>
+                  <Link to="/artwork/drawings"><div title="Drawings">Drawings</div></Link>
                 </div>
               </div>
-              <Link className="option" to="/short-films">
+              <Link className="option" to="/short-films" title="Short Films">
                   Short Films
               </Link>
-              <Link className="option" to="/music">
+              <Link className="option" to="/music" title="Music">
                   Music
               </Link>
-              <Link className="option" to="/store">
+              <Link className="option" to="/store" title="Store">
                   Store
               </Link>
-              <Link className="option" to="/about">
+              <Link className="option" to="/about" title="About">
                   About
               </Link>
-              <Link className="option" to="/links">
+              <Link className="option" to="/links" title="Links">
                   Links
               </Link>
             </div>
