@@ -1,6 +1,6 @@
 
 .music-section {
-  margin: 100px 5px;
+  margin: 100px 0px;
 }
 
 .description {
@@ -28,7 +28,7 @@
 // iPhone size plus
 @media (max-width: 414px) and (max-height: 736px) {
   .music-section {
-    margin-top: 50px;
+    margin: -22px 0px 50px 0px;
   }
 
   .album {

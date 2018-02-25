@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Toolbar.css';
 
-const zoomIcon = require('../../assets/svg/ios-search-strong.svg');
+const zoomIcon = require('../../assets/img/zoom.png');
 console.log(zoomIcon);
 
 class Toolbar extends Component {
@@ -28,13 +28,13 @@ class Toolbar extends Component {
           <div className="u-full-width toolbar-desktop">
 
             <div className="eight columns title-year">
-              <span className="title">{this.props.imageData.name}</span> <span className="year year-top">- {this.props.imageData.date}</span><br />
-              <span className="description">{this.props.imageData.description} <span className="year year-bottom">- {this.props.imageData.date}</span></span>
+              <span className="title">{this.props.imageData.name}</span><br />
+              <span className="details"><span className="description">{this.props.imageData.description} -</span> <span className="year year-bottom">{this.props.imageData.date}</span></span>
             </div>
 
             <div className="four columns tools">
               <div className="zoom-button" onClick={this.zoomToggle}>
-                <img className="zoom-icon" src={zoomIcon} width="30px" height="30px" />
+                <img className="zoom-icon" src={zoomIcon} width="22px" height="22px" />
               </div>
               <div className="gallery-index">
                 {galleryPosition}/{this.props.imageData.galleryLength}

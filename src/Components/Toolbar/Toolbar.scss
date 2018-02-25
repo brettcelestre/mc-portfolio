@@ -37,14 +37,12 @@
 .year {
   font-family: 'Libre Baskerville', serif;
   font-weight: 700;
-  font-size: .65rem;
+  font-size: .6rem;
   letter-spacing: 5px;
 }
-.year-top {
-  // display: inline-block;
-}
+
 .year-bottom {
-  display: none;
+  display: inline-block;
 }
 
 .info {
@@ -53,7 +51,7 @@
   padding-left: 14px;
   position: fixed;
 }
-.description {
+.details {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: .75rem;
@@ -67,11 +65,8 @@
 .zoom-button {
   width: 70px;
   height: 75px;
-  // -webkit-mask: url(http://brettcelestre.com/code/stocksight/ios-minus-empty.svg) no-repeat 50% 50%;
-  // mask: url(http://brettcelestre.com/code/stocksight/ios-minus-empty.svg) no-repeat 50% 50%;
   -webkit-mask-size: cover;
   text-align: center;
-  mask-size: cover;
   color: white;
   padding-top: 16px;
   float: right;
@@ -79,6 +74,10 @@
     background-color: #1f1f1f;
     cursor: pointer;
   }
+}
+
+.zoom-icon {
+  margin: 3px;
 }
 
 .gallery-index {
@@ -96,25 +95,19 @@
 // iPhone size plus
 @media (max-width: 414px) and (max-height: 736px) {
 
-  // .toolbar-desktop {
-  //   display: none;
-  // }
-  
-  // .toolbar-mobile {
-  //   display: block;
-  // }
-
-  // .title {
-    
-  // }
+  .details {
+    padding-top: 8px;
+    margin: -5px 10px 40px 0px;
+  }
 
   .description {
-    padding-top: 8px;
-    margin: -5px 10px 40px -5px;
+    display: none;
   }
 
   .title-year {
-    // padding-top: 16px;
+    width: -webkit-calc(100% - 80px);
+    width:    -moz-calc(100% - 80px);
+    width:         calc(100% - 80px);
   }
 
   .tools {
@@ -128,18 +121,17 @@
   }
 
   .zoom-button {
-    // position: fixed;
     float: right;
     padding-right: 10px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .zoom-icon path {
     fill: #ffffff;
   }  
   
-  .year-top {
-    display: none;
-  }
   .year-bottom {
     display: inline-block;
   }

@@ -127,16 +127,25 @@
 
   .image {
     width: 100%;
+    margin-top: -22px;
+    height: -webkit-calc(100% - 129px);
+    height:    -moz-calc(100% - 129px);
+    height:         calc(100% - 129px);
   }
 
   .gallery-image {
-    width: 100%;
+    width: auto;
     height: auto;
+    max-width: 100%; 
+    max-height: 100%; 
   }
 
   .image-controls {
     z-index: 30;
-    // background-color: red;
+    margin-top: -22px;
+    height: -webkit-calc(100% - 129px);
+    height:    -moz-calc(100% - 129px);
+    height:         calc(100% - 129px);
   }
 
 }

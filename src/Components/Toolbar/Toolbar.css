@@ -32,11 +32,11 @@
 .year {
   font-family: 'Libre Baskerville', serif;
   font-weight: 700;
-  font-size: .65rem;
+  font-size: .6rem;
   letter-spacing: 5px; }
 
 .year-bottom {
-  display: none; }
+  display: inline-block; }
 
 .info {
   text-align: left;
@@ -44,7 +44,7 @@
   padding-left: 14px;
   position: fixed; }
 
-.description {
+.details {
   font-family: 'Playfair Display', serif;
   font-weight: 400;
   font-size: .75rem;
@@ -58,13 +58,15 @@
   height: 75px;
   -webkit-mask-size: cover;
   text-align: center;
-  mask-size: cover;
   color: white;
   padding-top: 16px;
   float: right; }
   .zoom-button:hover {
     background-color: #1f1f1f;
     cursor: pointer; }
+
+.zoom-icon {
+  margin: 3px; }
 
 .gallery-index {
   width: 70px;
@@ -78,9 +80,15 @@
   float: right; }
 
 @media (max-width: 414px) and (max-height: 736px) {
-  .description {
+  .details {
     padding-top: 8px;
-    margin: -5px 10px 40px -5px; }
+    margin: -5px 10px 40px 0px; }
+  .description {
+    display: none; }
+  .title-year {
+    width: -webkit-calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    width: calc(100% - 80px); }
   .tools {
     display: inline-block;
     position: fixed;
@@ -90,9 +98,9 @@
   .zoom-button {
     float: right;
     padding-right: 10px; }
+    .zoom-button:hover {
+      cursor: pointer; }
   .zoom-icon path {
     fill: #ffffff; }
-  .year-top {
-    display: none; }
   .year-bottom {
     display: inline-block; } }
