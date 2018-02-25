@@ -17,8 +17,14 @@ class App extends Component {
 
   constructor(props) {
     super(props)
+    this.createUrlPathForPiece = this.createUrlPathForPiece.bind(this);
+
     this.state = {
       artmenu: false,
+      paintingsUrl: this.createUrlPathForPiece('paintings', true),
+      drawingsUrl: this.createUrlPathForPiece('drawings', true),
+      crossHatchingUrl: this.createUrlPathForPiece('crossHatchings', true),
+      stipplingsUrl: this.createUrlPathForPiece('stipplings', true),
       medium: '',
       mobileMenu: false,
       fade: false
@@ -26,7 +32,21 @@ class App extends Component {
     this.artworkMenuEnter = this.artworkMenuEnter.bind(this);
     this.artworkMenuLeave = this.artworkMenuLeave.bind(this);
     this.menuToggle = this.menuToggle.bind(this);
-    this.createUrlPathForPiece = this.createUrlPathForPiece.bind(this);
+  }
+
+  // Creates the Link URL for each section with whatever the latest piece of artwork is called
+  createUrlPathForPiece(section, artwork) {
+    let pieceName;
+    if (galleryData[section].data[0].title.includes(' ')) {
+      pieceName = galleryData[section].data[0].title.split(' ').join('-');
+    } else {
+      pieceName = galleryData[section].data[0].title;
+    }
+
+    if (section === 'crossHatchings') {
+      section = 'cross-hatchings';
+    }
+    return artwork ? `/artwork/${section}/${pieceName}` : `/${section}/${pieceName}`;
   }
 
   // Displays Dropdown
@@ -55,16 +75,7 @@ class App extends Component {
     }
   }
 
-  createUrlPathForPiece(section, artwork) {
-
-    // console.log(' create url path section =', section);
-    // console.log(' create url path first piece title = ', galleryData[section].data[0].title.split(' ').join('-'));
-    // const pieceName = galleryData[section].data[0].title.split(' ').join('-');
-    // return artwork ? `/artwork/${section}/${pieceName}` : `DO THIS PART`;
-  }
-
   render() {
-    // console.log('createUrlPathForPiece(stipplings); ====', this.createUrlPathForPiece('crossHatchings'));
     return (
       <div className="App">
 
@@ -80,10 +91,10 @@ class App extends Component {
 
         <div className={this.state.mobileMenu ? "navigation-mobile menu-show" : "navigation-mobile"}>
           <ul>
-            <Link to='/artwork/paintings' onClick={this.menuToggle} title="Paintings"><li>Paintings</li></Link>
-            <Link to="/artwork/stipplings" onClick={this.menuToggle} title="Stipplings"><li>Stipplings</li></Link>
-            <Link to="/artwork/cross-hatchings" onClick={this.menuToggle} title="Cross Hatchings"><li>Cross Hatchings</li></Link>
-            <Link to="/artwork/drawings" onClick={this.menuToggle} title="Drawings"><li>Drawings</li></Link>
+            <Link to={this.state.paintingsUrl} onClick={this.menuToggle} title="Paintings"><li>Paintings</li></Link>
+            <Link to={this.state.stipplingsUrl}  onClick={this.menuToggle} title="Stipplings"><li>Stipplings</li></Link>
+            <Link to={this.state.crossHatchingUrl} onClick={this.menuToggle} title="Cross Hatchings"><li>Cross Hatchings</li></Link>
+            <Link to={this.state.drawingsUrl} onClick={this.menuToggle} title="Drawings"><li>Drawings</li></Link>
             <Link to="/short-films" onClick={this.menuToggle} title="Short Films"><li>Short Films</li></Link>
             <Link to="/music" onClick={this.menuToggle} title="Music"><li>Music</li></Link>
             <Link to="/store" onClick={this.menuToggle} title="Store"><li>Store</li></Link>
@@ -111,10 +122,10 @@ class App extends Component {
                    title="Artwork">
                 Artwork
                 <div className={`artmenu ${this.state.artmenu ? 'visible' : ''}`}>
-                  <Link to='/artwork/paintings'><div title="Paintings">Paintings</div></Link>
-                  <Link to="/artwork/stipplings"><div title="Stipplings">Stipplings</div></Link>
-                  <Link to="/artwork/cross-hatchings"><div title="Cross Hatchings">Cross Hatchings</div></Link>
-                  <Link to="/artwork/drawings"><div title="Drawings">Drawings</div></Link>
+                  <Link to={this.state.paintingsUrl} ><div title="Paintings">Paintings</div></Link>
+                  <Link to={this.state.stipplingsUrl}><div title="Stipplings">Stipplings</div></Link>
+                  <Link to={this.state.crossHatchingUrl}><div title="Cross Hatchings">Cross Hatchings</div></Link>
+                  <Link to={this.state.drawingsUrl}><div title="Drawings">Drawings</div></Link>
                 </div>
               </div>
               <Link className="option" to="/short-films" title="Short Films">
