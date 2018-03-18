@@ -43,7 +43,7 @@ module.exports = [
     year: '2014',
     type: 'EP',
     path: 'the-bozos/shock-therapy',
-    embed: '',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474894972&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals, Guitar, Drums: Ryan Schmidt
     Bass, Background Vocals: Matthew Celestre
     All songs written by Matthew Celestre`,
@@ -62,7 +62,7 @@ module.exports = [
     year: '2013',
     type: 'EP',
     path: 'the-bozos/to-the-lost',
-    embed: '',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474893343&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals, Guitar, Drums: Ryan Schmidt
     Guitar, Bass: Matthew Celestre
     Track 1 written by Ryan Schmidt. Track two written by Matthew Celestre`,
@@ -78,7 +78,7 @@ module.exports = [
     year: '2013',
     type: 'EP',
     path: 'the-drunken-louts/the-vitali-anthology',
-    embed: '',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474890352&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals, Lead Guitar: Ryan Schmidt
     Background Vocals, Rhythm Guitar: Matthew Celestre
     All songs improvised and recorded by Ryan Schmidt and Matthew Celestre`,
@@ -164,6 +164,7 @@ module.exports = [
     year: '2011',
     type: 'EP',
     path: 'heil-hipster/self-titled',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474887910&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals: Camille Pontevin
       Guitar: Matthew Celestre
       Drums, Vocals: Ryan Schmidt

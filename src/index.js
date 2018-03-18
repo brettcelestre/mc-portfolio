@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 
 import registerServiceWorker from './registerServiceWorker';
 import './assets/css/skeleton.css';
@@ -24,14 +24,16 @@ ReactDOM.render(
       <Route path="/" component={App}>
       </Route>
       <Switch>
-        <Route exact path="/artwork/:medium/:piece" component={ImageViewer} />
+        <Route name="artwork" path="/artwork/:medium/:piece" component={ImageViewer} />
         <Route name="short-films" path="/short-films" component={ShortFilms} />
-        <Route name="album" path="/music/album/:album" component={MusicPlayer} />
+        <Route name="album" path="/music/:band/:album" component={MusicPlayer} />
         <Route name="music" path="/music" component={Music} />
         <Route name="store" path="/store" component={Store} />
         <Route name="links" path="/links" component={Links} />
         <Route name="about" path="/about" component={About} />
-        <Route path="/" component={Home} />
+        <Redirect to={{
+          pathname: '/artwork/paintings/somnolence'
+        }}/>
       </Switch>
     </div>
   </BrowserRouter>

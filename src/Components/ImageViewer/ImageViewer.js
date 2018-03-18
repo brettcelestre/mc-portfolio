@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
+import { Link, Redirect } from 'react-router-dom';
 import { WindowResizeListener } from 'react-window-resize-listener';
-import { Redirect } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router';
 
@@ -11,7 +11,7 @@ import Toolbar from '../Toolbar/Toolbar.js';
 const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
   stipplings: require('../../assets/data/stipplings.js'),
-  crossHatchings: require('../../assets/data/cross-hatchings.js'),
+  "cross-hatchings": require('../../assets/data/cross-hatchings.js'),
   drawings: require('../../assets/data/drawings.js')
 };
 
@@ -85,7 +85,7 @@ const artwork = {
       large: require('../../assets/gallery/stipplings/Midlife_Crisis_Large.jpg')
     }
   },
-  "crossHatchings": {
+  "cross-hatchings": {
     "Elderly Woman Study": {
       small: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Small.jpg'),
       medium: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Medium.jpg'),
@@ -186,9 +186,6 @@ const artwork = {
   }
 };
 
-// Stores choosen gallery
-let choosenGallery = '';
-
 class ImageViewer extends Component {
 
   static propTypes = {
@@ -214,29 +211,52 @@ class ImageViewer extends Component {
   }
 
   componentDidUpdate() {
-    // Updates gallery data
-    if ( choosenGallery !== this.state.gallery){
+    let currentPath = this.props.location.pathname.split('/')[2] === 
+      'crossHatching' ? 'cross-hatching' : this.props.location.pathname.split('/')[2];
+
+    // Updates gallery data if selected section is different that current
+    if ( currentPath !== this.state.gallery){
       this.setState({
-        gallery: choosenGallery,
+        gallery: currentPath,
         index: 0,
         width: 0,
         height: 0,
         name: '',
-        src: '',
         date: '',
-        description: ''
+        description: '',
+        zoom: false
       });
-
+      
       this.setState({
-        src: `${galleryData[choosenGallery].data[0].src}`,
-        galleryLength: galleryData[choosenGallery].data.length,
-        name: galleryData[choosenGallery].data[0].title,
-        description: galleryData[choosenGallery].data[0].description,
-        date: galleryData[choosenGallery].data[0].date,
-        width: galleryData[choosenGallery].data[0].sizes[this.state.currentSize].width,
-        height: galleryData[choosenGallery].data[0].sizes[this.state.currentSize].height
+        galleryLength: galleryData[currentPath].data.length,
+        name: galleryData[currentPath].data[0].title,
+        description: galleryData[currentPath].data[0].description,
+        date: galleryData[currentPath].data[0].date,
+        width: galleryData[currentPath].data[0].sizes[this.state.currentSize].width,
+        height: galleryData[currentPath].data[0].sizes[this.state.currentSize].height
       });
+      
+      
+      const currentImage = this.buildImageName(this.props.match.params.piece);
+      const currentIndex = galleryData[currentPath].data.findIndex(piece => piece.title === currentImage);
+      
+      if (currentImage !== this.state.name) {
+        this.setState({
+          gallery: currentPath,
+          index: galleryData[currentPath].data.findIndex(piece => piece.title === currentImage),
+        })
+  
+        this.setState({
+          galleryLength: galleryData[currentPath].data.length,
+          name: galleryData[currentPath].data[currentIndex].title,
+          description: galleryData[currentPath].data[currentIndex].description,
+          date: galleryData[currentPath].data[currentIndex].date,
+          width: galleryData[currentPath].data[currentIndex].sizes[this.state.currentSize].width,
+          height: galleryData[currentPath].data[currentIndex].sizes[this.state.currentSize].height
+        });
+      }
     }
+    
     // Puts focus on image-viewer so arrow keys will change image
     document.getElementsByClassName('image-viewer')[0].focus();
   }
@@ -253,32 +273,23 @@ class ImageViewer extends Component {
     // this.state = {
     //   album: music[music.findIndex(findAlbum)]
     // }
-    console.log('=========================');
-    console.log('PROPS =', props.match.params.piece);
-    const currentPath = props.location.pathname.split('/')[2];
-    console.log('IMAGE = ', props.match.params.piece);
-    console.log('currentPath = ', currentPath);
 
-
-    if ( currentPath === 'cross-hatchings' ) {
-      choosenGallery = 'crossHatchings';
-    } else {
-      choosenGallery = currentPath;
-    }
+    let currentPath = this.props.location.pathname.split('/')[2] === 
+    'crossHatching' ? 'cross-hatching' : this.props.location.pathname.split('/')[2];
+    const currentImage = this.buildImageName(props.match.params.piece);
 
     this.state = {
-      index: 0,
-      gallery: choosenGallery,
+      index: galleryData[currentPath].data.findIndex(piece => piece.title === currentImage ),
+      gallery: currentPath,
       galleryLength: 0,
       name: '',
-      src: '',
       date: '',
       description: '',
       currentSize: 'large',
       width: 0,
       height: 0,
       loading: '"../../assets/svg/load-c.svg"',
-      zoom: false
+      zoom: false,
     }
 
     this.windowSize = this.windowSize.bind(this);
@@ -287,6 +298,22 @@ class ImageViewer extends Component {
     this.next = this.next.bind(this);
     this.previous = this.previous.bind(this);
     this.onKeyPressed = this.onKeyPressed.bind(this);
+    this.buildImageName = this.buildImageName.bind(this);
+  }
+
+  
+  buildImageName(name) {
+    let theName = [];
+    const x = name.split('-');
+    x.forEach((word) => {
+      let y = word.split('')[0];
+      let update = y;
+      if (isNaN(y) && typeof y === 'string') {
+        update = word.length > 1 ? y.toUpperCase() + word.substr(1) : y.toUpperCase();;
+      };
+      theName.push(update);
+    });
+    return theName.join(' ');
   }
 
   // Move into utils. Possibly not since there is a setState inside
@@ -296,32 +323,16 @@ class ImageViewer extends Component {
       // Large
       if ( width >= 1100 && this.state.currentSize !== 'large' ) {
         this.setState({currentSize: 'large'});
-        console.log('large', width);
-  
-        // TODO: Run resizeImage
-        // $('#fit').imageFitWindow({offsetY: 67});
   
       // TODO: Also height
       // Medium
       } else if ( 1099 >= width && 800 <= width && this.state.currentSize !== 'medium' ) {
         this.setState({currentSize: 'medium'});
-        console.log('medium', width);
-  
-  
-        // TODO: Run resizeImage
-        // document.getElementsByClassName('gallery-image').imageFitWindow({offsetY: 75});
-        // $('.gallery-image').imageFitWindow({offsetY: 75});
-        // select 'gallery-image' and run .imageFitWindow({offsetY: SIZE OF TOOLBAR});
-  
-  
+
       // TODO: Also height
       // Small
       } else if ( 799 >= width && this.state.currentSize !== 'small' ) {
         this.setState({currentSize: 'small'});
-        console.log('small', width);
-  
-        // TODO: Run resizeImage
-        // fitImage
       }
     }
   }
@@ -332,21 +343,35 @@ class ImageViewer extends Component {
         if ( this.state.index > 0 ) {
           --this.state.index;
         }
+        this.setState({
+          index: this.state.index,
+          name: galleryData[this.state.gallery].data[this.state.index].title,
+          description: galleryData[this.state.gallery].data[this.state.index].description,
+          date: galleryData[this.state.gallery].data[this.state.index].date,
+          width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
+          height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height
+        });
         break;
       case 'next':
         if ( this.state.index < (galleryData[this.state.gallery].data.length-1) ) {
           ++this.state.index;
         }
+        this.setState({
+          index: this.state.index,
+          name: galleryData[this.state.gallery].data[this.state.index].title,
+          description: galleryData[this.state.gallery].data[this.state.index].description,
+          date: galleryData[this.state.gallery].data[this.state.index].date,
+          width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
+          height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height
+        });
         break;
     }
-    this.setState({
-      index: this.state.index,
-      name: galleryData[this.state.gallery].data[this.state.index].title,
-      description: galleryData[this.state.gallery].data[this.state.index].description,
-      date: galleryData[this.state.gallery].data[this.state.index].date,
-      width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
-      height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height
-    });
+
+    // Creates a new path out of gallery data and then redirects
+    let imageUrl = galleryData[this.state.gallery].data[this.state.index].title.toLowerCase().split(' ').join('-');
+    let currentGallery = this.state.gallery === 'crossHatchings' ? 'cross-hatchings' : this.state.gallery;
+    const x = `/artwork/${currentGallery}/${imageUrl}`;
+    this.props.history.push(x);
   }
 
   zoomImageState = () => {
@@ -369,7 +394,7 @@ class ImageViewer extends Component {
   next() {
     this.galleryWheel('next');
   }
-  
+
   onKeyPressed(e) {
     if ( e.keyCode == '37' && this.state.zoom == false) this.galleryWheel('previous');
     if ( e.keyCode == '39' && this.state.zoom == false) this.galleryWheel('next');
@@ -379,25 +404,6 @@ class ImageViewer extends Component {
   render() {
     window.addEventListener("keydown", this.onKeyPressed, true);
 
-    // const currentArray = this.props.location.pathname.split('/');
-    // const currentGallery = currentArray[currentArray.length - 1];
-    const currentGallery = this.props.location.pathname.split('/')[2];
-    console.log('currentGallery from RENDER = ', currentGallery);
-    
-
-    console.log('IMAGE data = ', this.state);
-    
-    // Updates current gallery
-    // TODO REFACTOR - make fn which returns correct format
-    if ( currentGallery !== this.state.gallery ) {
-      if ( currentGallery === 'cross-hatchings' ) {
-        console.log('cross-hatchings RANNNN');
-        choosenGallery = 'crossHatchings';
-      } else {
-        choosenGallery = currentGallery;
-      }
-    }
-    
     const { match, location, history } = this.props;
 
     return (
@@ -437,20 +443,14 @@ class ImageViewer extends Component {
         </div>
 
         <div className={this.state.zoom ? "image-hide" : "image-controls"}>
-          <div
-            className="previous"
-            onClick={this.previous}>
-            {/* <img
-              src={require("../../assets/svg/ios-arrow-left.svg")}
-              width="39px"
-              height="175px"
-              alt="previous"
-              className="previousSVG"/> */}
-          </div>
-          <div
-            className="next"
-            onClick={this.next}>
-          </div>
+            <div
+              className="previous"
+              onClick={this.previous}>
+            </div>
+            <div
+              className="next"
+              onClick={this.next}>
+            </div>
         </div>
 
         <Toolbar 
@@ -462,20 +462,3 @@ class ImageViewer extends Component {
 }
 
 export default ImageViewer;
-
-// const test = (text) => {
-//   console.log('suppppp', text);
-// }
-
-// ImageViewer.onKeyPressed
-
-// window.addEventListener("keydown", test, true);
-// window.addEventListener("keydown", handle, true);
-
-/* src={paintingsSRC[this.state.name][this.state.currentSize]} */
-
-// window.onload = function() {
-  
-//      document.getElementById('search').getElementsByTagName('input')[0].focus();
-  
-//   }

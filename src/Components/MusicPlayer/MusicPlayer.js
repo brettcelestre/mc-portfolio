@@ -10,13 +10,16 @@ class MusicPlayer extends Component {
 constructor(props){
   super(props)
 
-  console.log('IMAGE = ', props.match.params.album);
-  // const currentAlbum = props.location.pathname.split('/')[3];
+  const currentBand = props.match.params.band;
   const currentAlbum = props.match.params.album;
+
+  function genUrlString(string) {
+    return string.toLowerCase().split(' ').join('-');
+  };
   
+  // Finds correct album
   function findAlbum(album) {
-    const target = album.path.split('/')[1].toString();
-    return currentAlbum == target;
+    return currentAlbum == genUrlString(album.title) && currentBand == genUrlString(album.band);
   }
 
   this.state = {
@@ -26,19 +29,9 @@ constructor(props){
   this.buildPlayer = this.buildPlayer.bind(this);
 }
 
-buildPlayer() {
-  // return (
-  //   <div>{this.state.album.embed}<div>
-  // );
-  // console.log("ran");
-  // return reactElement;
-}
-
 render() {
   // Converts embeded soundcloud string into HTML
   const converter = new ReactHTMLConverter();
-
-  console.log('test album = ', this.state.album);
 
   return (
     <div className="container">

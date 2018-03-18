@@ -16,7 +16,6 @@ class Toolbar extends Component {
   }
 
   zoomToggle() {
-    console.log('zoom Toggle');
     this.props.imageZoom();
   }
 
@@ -49,21 +48,3 @@ class Toolbar extends Component {
 }
 
 export default Toolbar;
-
-
-
-{/* <div className="u-full-width toolbar-mobile">
-<div className="title-year">
-    <span className="title">{this.props.imageData.name}</span> <span className="year">- {this.props.imageData.date}</span><br />
-    <span className="description">{this.props.imageData.description}</span>
-  </div>
-
-  <div className="tools">
-    <div className="zoom-button" onClick={this.zoomToggle}>
-      <img className="zoom-icon" src={zoomIcon} width="30px" height="30px" />
-    </div>
-    <div className="gallery-index">
-      {galleryPosition}/{this.props.imageData.galleryLength}
-    </div>
-  </div>
-</div> */}

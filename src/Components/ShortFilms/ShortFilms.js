@@ -54,19 +54,16 @@ class ShortFilms extends Component {
           currentSize: 'large',
           width: filmData.sizes.large.width,
           height: filmData.sizes.large.height});
-      console.log('large', filmData.sizes.large.width);
     } else if ( 1099 >= width && 800 <= width && this.state.currentSize !== 'medium' ) {
       this.setState({
         currentSize: 'medium',
         width: filmData.sizes.medium.width,
         height: filmData.sizes.medium.height});
-        console.log('medium');
     } else if ( 799 >= width && this.state.currentSize !== 'small' ) {
       this.setState({
         currentSize: 'small',
         width: filmData.sizes.small.width,
         height: filmData.sizes.small.height});
-        console.log('small');
     }
   }
 
@@ -152,7 +149,6 @@ class ShortFilms extends Component {
             </div>
           </div>
         </div>
-
 
         <div className={`theatre ${this.state.theatreMode ? '' : 'theatre-close'}`}>
           <div className="theatre-exit" onClick={this.closeTheatre}>

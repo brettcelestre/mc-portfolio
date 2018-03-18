@@ -36,11 +36,9 @@ class About extends Component {
     // Mobile
     if ( width <= 518 ) {
       this.setState({current: 'mobile'});
-      console.log('Mobile');
     // Desktop
     } else {
       this.setState({current: 'desktop'});
-      console.log('Desktop');
     }
   }
 
@@ -57,7 +55,6 @@ class About extends Component {
             this.updateBioPicture(windowSize.windowWidth, windowSize.windowHeight)
           }
         }/>
-
 
         <div className="row bio-container">
           <img
@@ -77,10 +74,3 @@ class About extends Component {
 }
 
 export default About;
-
-// width={this.state.bioImages[this.state.current].width}
-// height={this.state.bioImages[this.state.current].height}
-
-/* src={bioImage}
-    width={750}
-    height={538} */

@@ -16,8 +16,6 @@ class Home extends Component {
         <h1>CONTENT</h1>
         <h1>CONTENT</h1>
         <h1>CONTENT</h1>
-        {/* <Gallery /> */}
-
       </div>
     );
   }

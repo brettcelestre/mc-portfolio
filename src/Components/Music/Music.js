@@ -13,36 +13,17 @@ class Music extends Component {
       musicData: music
     }
 
-    console.log('MUSIC DATA ===', this.state.musicData);
-
     this.buildAlbum = this.buildAlbum.bind(this);
-    this.listen = this.listen.bind(this);
-  }
-
-  listen(title) {
-    console.log(title);
-  }
-
-  buildPlayer(album){
-    // const mp3s = data.mp3s.map((path, i ) => {
-    // });
-  
-    // const trackList = data.trackList.map((track, i ) => {
-    //   // console.log("Track List ", i, track);
-    //   return (
-    //     <li>{track}</li>
-    //   );
-    // });
-    // console.log('trackList = ', trackList);
   }
 
   buildAlbum() {
+    const genUrlString = (string) => {
+      return string.toLowerCase().split(' ').join('-');
+    };
+
     const results = this.state.musicData.map((data, i) => {
       const largeCover = require(`../../assets/music/${data.path}/Cover_Large.jpg`);
-
-      const albumString = data.title.toLowerCase().split(' ').join('-');
-      console.log('albumString = ', albumString);
-      const musicPath = `/music/album/${albumString}`;
+      const musicPath = `/music/${genUrlString(data.band)}/${genUrlString(data.title)}`;
 
       return (
         <Link to={musicPath}>
@@ -59,12 +40,11 @@ class Music extends Component {
         </Link>
       )
     });
-
+    
     return results;
   }
 
   render() {
-
     return (
       <div className="container">
         <div className="row music-section">

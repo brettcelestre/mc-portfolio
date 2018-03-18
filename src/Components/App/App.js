@@ -38,11 +38,10 @@ class App extends Component {
   createUrlPathForPiece(section, artwork) {
     let pieceName;
     if (galleryData[section].data[0].title.includes(' ')) {
-      pieceName = galleryData[section].data[0].title.split(' ').join('-');
+      pieceName = galleryData[section].data[0].title.toLowerCase().split(' ').join('-');
     } else {
-      pieceName = galleryData[section].data[0].title;
+      pieceName = galleryData[section].data[0].title.toLowerCase();
     }
-
     if (section === 'crossHatchings') {
       section = 'cross-hatchings';
     }
@@ -59,15 +58,12 @@ class App extends Component {
   }
 
   menuToggle() {
-    console.log('menu toggle');
     if (this.state.mobileMenu) {
-      console.log('false');
       this.setState({
         mobileMenu: false,
         fade: false
       });
     } else {
-      console.log('true');
       this.setState({
         mobileMenu: true,
         fade: true
@@ -78,9 +74,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <div className="menu-button" onClick={this.menuToggle}>
-          {/* <image className="menu-icon" src={menuIcon} width="30px" height="30px" /> */}
           <ReactSVG
             path={menuIcon}
             style={{width: 30, height: 30}}
@@ -109,11 +103,8 @@ class App extends Component {
           <div className="container">
 
             <div className="u-full-width">
-              {/* <Link to="/home"> */}
               <h2 className="mainTitle">Matthew Celestre</h2>
-              {/* </Link> */}
             </div>
-
 
             <div className="navigation">
               <div className="option"
@@ -144,14 +135,11 @@ class App extends Component {
                   Links
               </Link>
             </div>
-
           </div>
         </div>
-
       </div>
     );
   }
-
 }
 
 export default App;

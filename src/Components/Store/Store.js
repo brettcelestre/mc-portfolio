@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
+import './Store.css';
 
 class Store extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
-        <h1>Store</h1>
+      <div className="container storeSection">
+        <h2>Store is coming soon.</h2>
       </div>
     );
   }
