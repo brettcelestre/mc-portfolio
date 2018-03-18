@@ -396,8 +396,8 @@ class ImageViewer extends Component {
   }
 
   onKeyPressed(e) {
-    if ( e.keyCode == '37' && this.state.zoom == false) this.galleryWheel('previous');
-    if ( e.keyCode == '39' && this.state.zoom == false) this.galleryWheel('next');
+    if ( e.keyCode == '37' && this.state.zoom == false) this.previous();
+    if ( e.keyCode == '39' && this.state.zoom == false) this.next();
     if ( e.keyCode == '187' || e.keyCode == '189' && this.state.zoom == false) this.zoomImageState();
   }
 
