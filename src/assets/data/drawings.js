@@ -63,48 +63,48 @@ module.exports = {
             }
           }
       },
-      {
-        "title": "Death Head Moth",
-        "date": "2017",
-        "description": "SHARPIES AND WATERCOLORS",
-        "arrows": "dark",
-        "info": "",
-        "sizes": {
-            "large": {
-              "width": 1500,
-              "height": 1010
-            },
-            "medium": {
-              "width": 1100,
-              "height": 740
-            },
-            "small": {
-              "width": 800,
-              "height": 538
-            }
-          }
-      },
-      {
-        "title": "To The Lost",
-        "date": "2017",
-        "description": "INK ON PAPER",
-        "arrows": "dark",
-        "info": "",
-        "sizes": {
-            "large": {
-              "width": 1500,
-              "height": 1113
-            },
-            "medium": {
-              "width": 1100,
-              "height": 816
-            },
-            "small": {
-              "width": 800,
-              "height": 594
-            }
-          }
-      },
+      // {
+      //   "title": "Death Head Moth",
+      //   "date": "2017",
+      //   "description": "SHARPIES AND WATERCOLORS",
+      //   "arrows": "dark",
+      //   "info": "",
+      //   "sizes": {
+      //       "large": {
+      //         "width": 1500,
+      //         "height": 1010
+      //       },
+      //       "medium": {
+      //         "width": 1100,
+      //         "height": 740
+      //       },
+      //       "small": {
+      //         "width": 800,
+      //         "height": 538
+      //       }
+      //     }
+      // },
+      // {
+      //   "title": "To The Lost",
+      //   "date": "2017",
+      //   "description": "INK ON PAPER",
+      //   "arrows": "dark",
+      //   "info": "",
+      //   "sizes": {
+      //       "large": {
+      //         "width": 1500,
+      //         "height": 1113
+      //       },
+      //       "medium": {
+      //         "width": 1100,
+      //         "height": 816
+      //       },
+      //       "small": {
+      //         "width": 800,
+      //         "height": 594
+      //       }
+      //     }
+      // },
       {
         "title": "Milo At War",
         "date": "2015",
@@ -185,6 +185,48 @@ module.exports = {
             },
             "small": {
               "width": 454,
+              "height": 600
+            }
+          }
+      },
+      {
+        "title": "The Elephant Man",
+        "date": "2012",
+        "description": "PENCILS AND OILS ON WOOD",
+        "arrows": "light",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 1036,
+              "height": 1200
+            },
+            "medium": {
+              "width": 777,
+              "height": 900
+            },
+            "small": {
+              "width": 518,
+              "height": 600
+            }
+          }
+      },
+      {
+        "title": "Da Vinci Skull Study",
+        "date": "2011",
+        "description": "INK ON PAPER",
+        "arrows": "light",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 868,
+              "height": 1200
+            },
+            "medium": {
+              "width": 651,
+              "height": 900
+            },
+            "small": {
+              "width": 434,
               "height": 600
             }
           }

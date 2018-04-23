@@ -102,7 +102,7 @@ module.exports = {
         }
     },
     {
-      "title": "From The Craddle To The Grave",
+      "title": "From The Cradle To The Grave",
       "date": "2013",
       "description": "ULTRA FINE SHARPIES",
       "arrows": "dark",

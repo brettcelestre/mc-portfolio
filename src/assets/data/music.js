@@ -1,60 +1,73 @@
 module.exports = [
-  {
-    band: 'The Buttheads',
-    title: 'Self Titled',
-    year: '2018',
-    type: 'EP',
-    path: 'the-buttheads/self-titled',
-    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/456960399&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-    description: `Vocals, Guitar: Matthew Celestre
-      Drums: Ryan Schmidt
-      All songs written by Matthew Celestre`,
-    trackList: [
-      '1. Surf’s Up Bitch',
-      '2. Meow'
-    ],
-    mp3s: [
-      '01_Surfs-Up,-Bitch.mp3',
-      '02_Meow.mp3'
-    ],
-    lyrics: [
-      ``,
-      `Sometimes I try to look into your eyes
-      Can’t find the truth cause all I can find
-      We pretend, make amends 
-      Watching movies kissin bootys
-      Always in the end
-      I know when I get older
-      I’ll die from my disorder 
-      My baby it’s scary
-      What to do when life gets heavy
+  // {
+  //   band: 'The Buttheads',
+  //   title: 'Self Titled',
+  //   year: '2018',
+  //   type: 'EP',
+  //   path: 'the-buttheads/self-titled',
+  //   embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/456960399&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+  //   description: `Vocals, Guitar: Matthew Celestre
+  //     Drums: Ryan Schmidt
+  //     All songs written by Matthew Celestre`,
+  //   trackList: [
+  //     '1. Surf’s Up Bitch',
+  //     '2. Meow'
+  //   ],
+  //   mp3s: [
+  //     '01_Surfs-Up,-Bitch.mp3',
+  //     '02_Meow.mp3'
+  //   ],
+  //   lyrics: [
+  //     ``,
+  //     `Sometimes I try to look into your eyes
+  //     Can’t find the truth cause all I can find
+  //     We pretend, make amends 
+  //     Watching movies kissin bootys
+  //     Always in the end
+  //     I know when I get older
+  //     I’ll die from my disorder 
+  //     My baby it’s scary
+  //     What to do when life gets heavy
       
-      Meow meow
-      Try to keep it going
-      But you’re always on the prowl 
-      Meow meow
-      Want to find a lover
-      But ya don’t know how`
-    ]
-  },
+  //     Meow meow
+  //     Try to keep it going
+  //     But you’re always on the prowl 
+  //     Meow meow
+  //     Want to find a lover
+  //     But ya don’t know how`
+  //   ]
+  // },
+  // {
+  //   band: 'The Bozos',
+  //   title: 'Shock Therapy',
+  //   year: '2014',
+  //   type: 'EP',
+  //   path: 'the-bozos/shock-therapy',
+  //   embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474894972&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+  //   description: `Vocals, Guitar, Drums: Ryan Schmidt
+  //   Bass, Background Vocals: Matthew Celestre
+  //   All songs written by Matthew Celestre`,
+  //   trackList: [
+  //     '1. Tarnished',
+  //     '2. Lustful Love'
+  //   ],
+  //   mp3s: [
+  //     '01_Tarnished.mp3',
+  //     '02_Lustful-Love.mp3'
+  //   ]
+  // },
   {
-    band: 'The Bozos',
-    title: 'Shock Therapy',
-    year: '2014',
-    type: 'EP',
-    path: 'the-bozos/shock-therapy',
-    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474894972&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-    description: `Vocals, Guitar, Drums: Ryan Schmidt
-    Bass, Background Vocals: Matthew Celestre
-    All songs written by Matthew Celestre`,
+    band: 'The Honeymooners',
+    title: 'To The Moon!',
+    year: '2018',
+    type: 'Single',
+    path: 'the-honeymooners/to-the-moon',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/429345681&color=%231f1f1f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    description: ``,
     trackList: [
-      '1. Tarnished',
-      '2. Lustful Love'
+      '1. All My Love'
     ],
-    mp3s: [
-      '01_Tarnished.mp3',
-      '02_Lustful-Love.mp3'
-    ]
+    mp3s: []
   },
   {
     band: 'The Bozos',

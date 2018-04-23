@@ -25,35 +25,35 @@ module.exports = {
     //       }
     //     }
     // },
-    // {
-    //   "title": "Madrid",
-    //   "date": "2017",
-    //   "description": "OIL ON CANVAS | 6' x 4'",
-    //   "arrows": "light",
-    //   "info": "",
-    //   "sizes": {
-    //       "zoom": {
-    //         "width": 100,
-    //         "height": 100
-    //       },
-    //       "large": {
-    //         "width": 1446,
-    //         "height": 1200
-    //       },
-    //       "medium": {
-    //         "width": 1085,
-    //         "height": 900
-    //       },
-    //       "small": {
-    //         "width": 723,
-    //         "height": 600
-    //       }
-    //     }
-    // },
+    {
+      "title": "Josette",
+      "date": "2017",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "",
+      "sizes": {
+          "zoom": {
+            "width": 100,
+            "height": 100
+          },
+          "large": {
+            "width": 966,
+            "height": 1200
+          },
+          "medium": {
+            "width": 724,
+            "height": 900
+          },
+          "small": {
+            "width": 483,
+            "height": 600
+          }
+        }
+    },
     // {
     //   "title": "The Roaring Twenties",
     //   "date": "2017",
-    //   "description": "OIL ON CANVAS | 6' x 4'",
+    //   "description": "OIL ON CANVAS",
     //   "arrows": "light",
     //   "info": "",
     //   "sizes": {
@@ -62,15 +62,15 @@ module.exports = {
     //         "height": 100
     //       },
     //       "large": {
-    //         "width": 1446,
+    //         "width": 946,
     //         "height": 1200
     //       },
     //       "medium": {
-    //         "width": 1085,
+    //         "width": 709,
     //         "height": 900
     //       },
     //       "small": {
-    //         "width": 723,
+    //         "width": 473,
     //         "height": 600
     //       }
     //     }
