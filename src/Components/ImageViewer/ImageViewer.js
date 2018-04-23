@@ -3,10 +3,12 @@ import React, { Component } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { WindowResizeListener } from 'react-window-resize-listener';
 import PropTypes from 'prop-types';
+import ReactSVG from 'react-svg';
 import { withRouter } from 'react-router';
 
 import './ImageViewer.css';
 import Toolbar from '../Toolbar/Toolbar.js';
+const arrow = require('../../assets/svg/ios-arrow-left.svg');
 
 const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
@@ -46,6 +48,16 @@ const artwork = {
       small: require('../../assets/gallery/paintings/Winter_Fruit_Small.jpg'),
       medium: require('../../assets/gallery/paintings/Winter_Fruit_Medium.jpg'),
       large: require('../../assets/gallery/paintings/Winter_Fruit_Large.jpg')
+    },
+    "The Roaring Twenties": {
+      small: require('../../assets/gallery/paintings/The_Roaring_Twenties_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/The_Roaring_Twenties_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/The_Roaring_Twenties_Large.jpg')
+    },
+    "Josette": {
+      small: require('../../assets/gallery/paintings/Josette_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/Josette_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/Josette_Large.jpg')
     }
   },
   "stipplings": {
@@ -69,7 +81,7 @@ const artwork = {
       medium: require('../../assets/gallery/stipplings/Jezebel_Medium.jpg'),
       large: require('../../assets/gallery/stipplings/Jezebel_Large.jpg')
     },
-    "From The Craddle To The Grave": {
+    "From The Cradle To The Grave": {
       small: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Small.jpg'),
       medium: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Medium.jpg'),
       large: require('../../assets/gallery/stipplings/From_The_Craddle_To_The_Grave_Large.jpg')
@@ -177,6 +189,16 @@ const artwork = {
       small: require('../../assets/gallery/drawings/Rosebud_Small.jpg'),
       medium: require('../../assets/gallery/drawings/Rosebud_Medium.jpg'),
       large: require('../../assets/gallery/drawings/Rosebud_Large.jpg')
+    },
+    "The Elephant Man": {
+      small: require('../../assets/gallery/drawings/The_Elephant_Man_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/The_Elephant_Man_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/The_Elephant_Man_Large.jpg')
+    },
+    "Da Vinci Skull Study": {
+      small: require('../../assets/gallery/drawings/Da_Vinci_Skull_Study_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Da_Vinci_Skull_Study_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Da_Vinci_Skull_Study_Large.jpg')
     },
     "Ambien Nights": {
       small: require('../../assets/gallery/drawings/Ambien_Nights_Small.jpg'),
@@ -299,6 +321,7 @@ class ImageViewer extends Component {
     this.previous = this.previous.bind(this);
     this.onKeyPressed = this.onKeyPressed.bind(this);
     this.buildImageName = this.buildImageName.bind(this);
+    this.buildZoomImage = this.buildZoomImage.bind(this);
   }
 
   
@@ -370,6 +393,10 @@ class ImageViewer extends Component {
     // Creates a new path out of gallery data and then redirects
     let imageUrl = galleryData[this.state.gallery].data[this.state.index].title.toLowerCase().split(' ').join('-');
     let currentGallery = this.state.gallery === 'crossHatchings' ? 'cross-hatchings' : this.state.gallery;
+    // Updates gallery
+    this.setState({
+      gallery: currentGallery
+    })
     const x = `/artwork/${currentGallery}/${imageUrl}`;
     this.props.history.push(x);
   }
@@ -387,6 +414,22 @@ class ImageViewer extends Component {
     }
   }
 
+  buildZoomImage() {
+    if (this.state.zoom) {
+      return(
+        <img
+          src={artwork[this.state.gallery][this.state.name]['large']}
+          width={galleryData[this.state.gallery].data[this.state.index].sizes['large'].width}
+          height={galleryData[this.state.gallery].data[this.state.index].sizes['large'].height}
+          className="zoom-image"
+          alt={this.state.name}
+          title={this.state.name}
+        />
+      );
+    }
+    return;
+  }
+
   previous() {
     this.galleryWheel('previous');
   }
@@ -396,7 +439,9 @@ class ImageViewer extends Component {
   }
 
   onKeyPressed(e) {
+    // left arrow
     if ( e.keyCode == '37' && this.state.zoom == false) this.previous();
+    // right arrow
     if ( e.keyCode == '39' && this.state.zoom == false) this.next();
     if ( e.keyCode == '187' || e.keyCode == '189' && this.state.zoom == false) this.zoomImageState();
   }
@@ -418,15 +463,8 @@ class ImageViewer extends Component {
           }
         }/>
 
-        <div className={this.state.zoom ? "zoom-box" : "zoom-box-hide"} onClick={this.zoomImageState}>
-          <img
-            src={artwork[this.state.gallery][this.state.name]['large']}
-            width={galleryData[this.state.gallery].data[this.state.index].sizes['large'].width}
-            height={galleryData[this.state.gallery].data[this.state.index].sizes['large'].height}
-            className="zoom-image"
-            alt={this.state.name}
-            title={this.state.name}
-          />
+        <div id='zoom-box' className={this.state.zoom ? "zoom-box" : "zoom-box-hide"} onClick={this.zoomImageState}>
+          {this.buildZoomImage()}
         </div>
 
         <div className={this.state.zoom ? "image-hide" : "image"}>
@@ -446,10 +484,26 @@ class ImageViewer extends Component {
             <div
               className="previous"
               onClick={this.previous}>
+              <div className="previous-button-box">
+                <ReactSVG
+                  path={arrow}
+                  style={{width: 30, height: 30}}
+                  className="previous-arrow"
+                  wrapperClassName="previous-arrow"
+                />
+              </div>
             </div>
             <div
               className="next"
               onClick={this.next}>
+              <div className="next-button-box">
+                <ReactSVG
+                  path={arrow}
+                  style={{width: 30, height: 30}}
+                  className="next-arrow"
+                  wrapperClassName="next-arrow"
+                />
+              </div>
             </div>
         </div>
 
