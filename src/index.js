@@ -6,6 +6,7 @@ import registerServiceWorker from './registerServiceWorker';
 import './assets/css/skeleton.css';
 import './assets/css/normalize.css';
 import './index.css';
+import paintings from './assets/data/paintings.js';
 
 import App from './Components/App/App.js';
 import About from './Components/About/About.js';
@@ -32,8 +33,9 @@ ReactDOM.render(
         <Route name="links" path="/links" component={Links} />
         <Route name="about" path="/about" component={About} />
         <Redirect to={{
-          pathname: '/artwork/paintings/somnolence'
+          pathname: `/artwork/paintings/${paintings.data[0].title.toLowerCase()}`
         }}/>
+        <Route component={ImageViewer} />
       </Switch>
     </div>
   </BrowserRouter>
