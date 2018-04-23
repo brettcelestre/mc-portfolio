@@ -9,7 +9,7 @@ const menuIcon = require('../../assets/svg/android-more-vertical.svg');
 const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
   stipplings: require('../../assets/data/stipplings.js'),
-  crossHatchings: require('../../assets/data/cross-hatchings.js'),
+  "cross-hatchings": require('../../assets/data/cross-hatchings.js'),
   drawings: require('../../assets/data/drawings.js')
 };
 
@@ -23,7 +23,7 @@ class App extends Component {
       artmenu: false,
       paintingsUrl: this.createUrlPathForPiece('paintings', true),
       drawingsUrl: this.createUrlPathForPiece('drawings', true),
-      crossHatchingUrl: this.createUrlPathForPiece('crossHatchings', true),
+      crossHatchingUrl: this.createUrlPathForPiece('cross-hatchings', true),
       stipplingsUrl: this.createUrlPathForPiece('stipplings', true),
       medium: '',
       mobileMenu: false,
@@ -41,9 +41,6 @@ class App extends Component {
       pieceName = galleryData[section].data[0].title.toLowerCase().split(' ').join('-');
     } else {
       pieceName = galleryData[section].data[0].title.toLowerCase();
-    }
-    if (section === 'crossHatchings') {
-      section = 'cross-hatchings';
     }
     return artwork ? `/artwork/${section}/${pieceName}` : `/${section}/${pieceName}`;
   }
@@ -91,7 +88,7 @@ class App extends Component {
             <Link to={this.state.drawingsUrl} onClick={this.menuToggle} title="Drawings"><li>Drawings</li></Link>
             <Link to="/short-films" onClick={this.menuToggle} title="Short Films"><li>Short Films</li></Link>
             <Link to="/music" onClick={this.menuToggle} title="Music"><li>Music</li></Link>
-            <Link to="/store" onClick={this.menuToggle} title="Store"><li>Store</li></Link>
+            <a href="https://www.redbubble.com/people/1881productions/collections/885803-products" target="blank" title="Store"><li>Store</li></a>
             <Link to="/about" onClick={this.menuToggle} title="About"><li>About</li></Link>
             <Link to="/links" onClick={this.menuToggle} title="Links"><li>Links</li></Link>
           </ul>
@@ -125,9 +122,9 @@ class App extends Component {
               <Link className="option" to="/music" title="Music">
                   Music
               </Link>
-              <Link className="option" to="/store" title="Store">
+              <a href="https://www.redbubble.com/people/1881productions/collections/885803-products" className="option" target="blank" title="Store">
                   Store
-              </Link>
+              </a>
               <Link className="option" to="/about" title="About">
                   About
               </Link>
