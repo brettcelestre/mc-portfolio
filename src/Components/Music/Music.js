@@ -13,10 +13,10 @@ class Music extends Component {
       musicData: music
     }
 
-    this.buildAlbum = this.buildAlbum.bind(this);
+    this.buildAlbum = this.buildAlbums.bind(this);
   }
 
-  buildAlbum() {
+  buildAlbums() {
     const genUrlString = (string) => {
       return string.toLowerCase().split(' ').join('-');
     };
@@ -48,7 +48,7 @@ class Music extends Component {
     return (
       <div className="container">
         <div className="row music-section">
-          {this.buildAlbum()}
+          {this.buildAlbums()}
         </div>
       </div>
     );
