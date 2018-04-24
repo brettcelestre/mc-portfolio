@@ -127,7 +127,7 @@ module.exports = {
           }
       },
       {
-        "title": "Too Much On My Mind",
+        "title": "Bipolar Disorder",
         "date": "2013",
         "description": "SHARPIES ON PAPER",
         "arrows": "dark",

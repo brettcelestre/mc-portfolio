@@ -50,31 +50,31 @@ module.exports = {
           }
         }
     },
-    // {
-    //   "title": "The Roaring Twenties",
-    //   "date": "2017",
-    //   "description": "OIL ON CANVAS",
-    //   "arrows": "light",
-    //   "info": "",
-    //   "sizes": {
-    //       "zoom": {
-    //         "width": 100,
-    //         "height": 100
-    //       },
-    //       "large": {
-    //         "width": 946,
-    //         "height": 1200
-    //       },
-    //       "medium": {
-    //         "width": 709,
-    //         "height": 900
-    //       },
-    //       "small": {
-    //         "width": 473,
-    //         "height": 600
-    //       }
-    //     }
-    // },
+    {
+      "title": "The Roaring Twenties",
+      "date": "2017",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "",
+      "sizes": {
+          "zoom": {
+            "width": 100,
+            "height": 100
+          },
+          "large": {
+            "width": 946,
+            "height": 1200
+          },
+          "medium": {
+            "width": 709,
+            "height": 900
+          },
+          "small": {
+            "width": 473,
+            "height": 600
+          }
+        }
+    },
     {
       "title": "Somnolence",
       "date": "2013",
