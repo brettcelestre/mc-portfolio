@@ -4,7 +4,7 @@ import { Link, Redirect } from 'react-router-dom';
 import ReactSVG from 'react-svg';
 
 import './App.css';
-const menuIcon = require('../../assets/svg/android-more-vertical.svg');
+const menuIcon = require('../../assets/svg/random-menu-lines.svg');
 
 const galleryData = {
   paintings: require('../../assets/data/paintings.js'),
@@ -74,7 +74,7 @@ class App extends Component {
         <div className="menu-button" onClick={this.menuToggle}>
           <ReactSVG
             path={menuIcon}
-            style={{width: 30, height: 30}}
+            style={{width: 27, height: 27}}
             className="menu-icon"
             wrapperClassName="menu-icon"
           />
