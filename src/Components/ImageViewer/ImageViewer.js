@@ -422,7 +422,6 @@ class ImageViewer extends Component {
 
   buildZoomImage() {
     if (this.state.zoom) {
-      console.log('FUCK');
       return(
         <img
           src={artwork[this.state.gallery][this.state.name]['large']}
