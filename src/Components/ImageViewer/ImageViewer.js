@@ -456,8 +456,6 @@ class ImageViewer extends Component {
   render() {
     window.addEventListener("keydown", this.onKeyPressed, true);
 
-    console.log('this.state.currentSize', this.state.currentSize);
-
     const { match, location, history } = this.props;
 
     return (
