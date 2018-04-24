@@ -156,6 +156,7 @@
     height:    -moz-calc(100% - 129px);
     height:         calc(100% - 129px);
     min-height: unset;
+    display: inline-flex;
   }
 
   .gallery-image {
@@ -163,6 +164,7 @@
     height: auto;
     max-width: 100%; 
     max-height: 100%; 
+    vertical-align: middle;
   }
 
   .image-controls {

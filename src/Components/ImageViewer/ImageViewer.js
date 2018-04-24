@@ -175,10 +175,10 @@ const artwork = {
       medium: require('../../assets/gallery/drawings/Milo_At_War_Medium.jpg'),
       large: require('../../assets/gallery/drawings/Milo_At_War_Large.jpg')
     },
-    "Too Much On My Mind": {
-      small: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/Too_Much_On_My_Mind_Large.jpg')
+    "Bipolar Disorder": {
+      small: require('../../assets/gallery/drawings/Bipolar_Disorder_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Bipolar_Disorder_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Bipolar_Disorder_Large.jpg')
     },
     "The Grotesque Master": {
       small: require('../../assets/gallery/drawings/The_Grotesque_Master_Small.jpg'),
@@ -238,6 +238,9 @@ class ImageViewer extends Component {
 
     // Updates gallery data if selected section is different that current
     if ( currentPath !== this.state.gallery){
+
+      // console.log('current path = ', currentPath);
+
       this.setState({
         gallery: currentPath,
         index: 0,
@@ -341,21 +344,24 @@ class ImageViewer extends Component {
 
   // Move into utils. Possibly not since there is a setState inside
   windowSize(width, height) {
+    // Adjusts for navigation and toolbar
+    height -= 150;    
     // Makes sure you're not zoomed in
     if (!this.state.zoom) {
       // Large
-      if ( width >= 1100 && this.state.currentSize !== 'large' ) {
+      if (height >= 900 && this.state.currentSize !== 'large' ) {
         this.setState({currentSize: 'large'});
-  
-      // TODO: Also height
+        return;
+      }
       // Medium
-      } else if ( 1099 >= width && 800 <= width && this.state.currentSize !== 'medium' ) {
+      if (height >= 600 && this.state.currentSize !== 'medium' ) {
         this.setState({currentSize: 'medium'});
-
-      // TODO: Also height
+        return;
+      }
       // Small
-      } else if ( 799 >= width && this.state.currentSize !== 'small' ) {
+      if (height <= 599 && this.state.currentSize !== 'small' ) {
         this.setState({currentSize: 'small'});
+        return;
       }
     }
   }
@@ -416,6 +422,7 @@ class ImageViewer extends Component {
 
   buildZoomImage() {
     if (this.state.zoom) {
+      console.log('FUCK');
       return(
         <img
           src={artwork[this.state.gallery][this.state.name]['large']}
@@ -448,6 +455,8 @@ class ImageViewer extends Component {
 
   render() {
     window.addEventListener("keydown", this.onKeyPressed, true);
+
+    console.log('this.state.currentSize', this.state.currentSize);
 
     const { match, location, history } = this.props;
 
