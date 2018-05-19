@@ -263,11 +263,11 @@ class ImageViewer extends Component {
   componentDidUpdate() {
     let currentPath = this.props.location.pathname.split('/')[2] === 
       'crossHatching' ? 'cross-hatching' : this.props.location.pathname.split('/')[2];
+      // console.log('current path = ', currentPath); 
 
     // Updates gallery data if selected section is different that current
     if ( currentPath !== this.state.gallery){
 
-      // console.log('current path = ', currentPath);
 
       this.setState({
         gallery: currentPath,

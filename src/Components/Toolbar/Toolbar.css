@@ -81,7 +81,20 @@
   text-align: center;
   letter-spacing: 5px;
   padding-top: 24px;
-  float: right; }
+  float: right;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                supported by Chrome and Opera */ }
 
 @media (max-width: 414px) and (max-height: 736px) {
   .details {
