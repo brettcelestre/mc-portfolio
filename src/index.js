@@ -7,6 +7,7 @@ import './assets/css/skeleton.css';
 import './assets/css/normalize.css';
 import './index.css';
 import paintings from './assets/data/paintings.js';
+import crossHatchings from './assets/data/cross-hatchings.js';
 
 import App from './Components/App/App.js';
 import About from './Components/About/About.js';
@@ -18,6 +19,20 @@ import Music from './Components/Music/Music.js';
 import MusicPlayer from './Components/MusicPlayer/MusicPlayer.js';
 import ImageViewer from './Components/ImageViewer/ImageViewer.js';
 import ShortFilms from './Components/ShortFilms/ShortFilms.js';
+
+const buildImageRouteName = (name) => {
+  let theName = [];
+  const x = name.split(' ');
+  x.forEach((word) => {
+    let y = word.split('')[0];
+    let update = y;
+    if (isNaN(y) && typeof y === 'string') {
+      update = word.length > 1 ? y.toUpperCase() + word.substr(1) : y.toUpperCase();;
+    };
+    theName.push(update);
+  });
+  return theName.join('-').toLowerCase();
+}
 
 ReactDOM.render(
   <BrowserRouter>
@@ -33,7 +48,7 @@ ReactDOM.render(
         <Route name="links" path="/links" component={Links} />
         <Route name="about" path="/about" component={About} />
         <Redirect to={{
-          pathname: `/artwork/paintings/${paintings.data[0].title.toLowerCase()}`
+          pathname: `/artwork/cross-hatchings/${buildImageRouteName(crossHatchings.data[0].title)}`
         }}/>
         <Route component={ImageViewer} />
       </Switch>
