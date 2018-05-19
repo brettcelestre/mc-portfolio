@@ -19,6 +19,11 @@ const galleryData = {
 
 const artwork = {
   "paintings": {
+    "Innocent X": {
+      small: require('../../assets/gallery/paintings/Innocent_X_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/Innocent_X_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/Innocent_X_Large.jpg')
+    },
     "Somnolence": {
       small: require('../../assets/gallery/paintings/Somnolence_Small.jpg'),
       medium: require('../../assets/gallery/paintings/Somnolence_Medium.jpg'),
@@ -98,6 +103,16 @@ const artwork = {
     }
   },
   "cross-hatchings": {
+    "De Wit Study V": {
+      small: require('../../assets/gallery/crossHatchings/De_Wit_Study_V_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/De_Wit_Study_V_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/De_Wit_Study_V_Large.jpg')
+    },
+    "Edith": {
+      small: require('../../assets/gallery/crossHatchings/Edith_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Edith_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Edith_Large.jpg')
+    },
     "Elderly Woman Study": {
       small: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Small.jpg'),
       medium: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Medium.jpg'),
@@ -145,6 +160,16 @@ const artwork = {
     }
   },
   "drawings": {
+    "Farmer": {
+      small: require('../../assets/gallery/drawings/Farmer_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Farmer_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Farmer_Large.jpg')
+    },
+    "Cruella": {
+      small: require('../../assets/gallery/drawings/Cruella_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Cruella_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Cruella_Large.jpg')
+    },
     "Rembrandt Study": {
       small: require('../../assets/gallery/drawings/Rembrandt_Study_Small.jpg'),
       medium: require('../../assets/gallery/drawings/Rembrandt_Study_Medium.jpg'),
@@ -222,6 +247,9 @@ class ImageViewer extends Component {
   }
 
   componentWillMount() {
+    // Finds window size
+    this.windowSize(window.innerWidth, window.innerHeight)
+    // Sets first image
     this.setState({
       galleryLength: galleryData[this.state.gallery].data.length,
       src: `${galleryData[this.state.gallery].data[this.state.index].src}`,
@@ -409,9 +437,19 @@ class ImageViewer extends Component {
 
   zoomImageState = () => {
     if (this.state.zoom) {
+      // Finds current size of window
+      let windowSize;
+      const currentSize = window.innerHeight - 150;
+      if (currentSize >= 900) {
+        windowSize = 'large';
+      } else if (currentSize >= 600) {
+        windowSize = 'medium';
+      } else {
+        windowSize = 'small';
+      }
       this.setState({
         zoom: false,
-        currentSize: 'large'
+        currentSize: windowSize
       });
     } else {
       this.setState({
