@@ -67,16 +67,7 @@
   display: inline-block; }
 
 .zoom-button {
-  width: 70px;
-  height: 75px;
-  -webkit-mask-size: cover;
-  text-align: center;
-  color: white;
-  padding-top: 16px;
-  float: right; }
-  .zoom-button:hover {
-    background-color: #1f1f1f;
-    cursor: pointer; }
+  display: none; }
 
 .zoom-icon {
   margin: 3px; }
@@ -109,8 +100,9 @@
   .gallery-index {
     display: none; }
   .zoom-button {
+    display: block;
     float: right;
-    padding-right: 10px; }
+    padding: 20px; }
     .zoom-button:hover {
       cursor: pointer; }
   .zoom-icon path {
