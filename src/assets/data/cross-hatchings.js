@@ -1,6 +1,48 @@
 module.exports = {
     "data": [
       {
+        "title": "De Wit Study V",
+        "date": "2018",
+        "description": "INK ON PAPER",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 886,
+              "height": 1200
+            },
+            "medium": {
+              "width": 664,
+              "height": 900
+            },
+            "small": {
+              "width": 443,
+              "height": 600
+            }
+          }
+      },
+      {
+        "title": "Edith",
+        "date": "2018",
+        "description": "INK ON PAPER",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 900,
+              "height": 1200
+            },
+            "medium": {
+              "width": 675,
+              "height": 900
+            },
+            "small": {
+              "width": 450,
+              "height": 600
+            }
+          }
+      },
+      {
         "title": "Elderly Woman Study",
         "date": "2017",
         "description": "INK ON PAPER",

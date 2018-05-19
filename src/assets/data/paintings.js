@@ -26,6 +26,27 @@ module.exports = {
     //     }
     // },
     {
+      "title": "Innocent X",
+      "date": "2018",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "",
+      "sizes": {
+          "large": {
+            "width": 931,
+            "height": 1200
+          },
+          "medium": {
+            "width": 698,
+            "height": 900
+          },
+          "small": {
+            "width": 465,
+            "height": 600
+          }
+        }
+    },
+    {
       "title": "Josette",
       "date": "2017",
       "description": "OIL ON CANVAS",

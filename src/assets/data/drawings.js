@@ -1,6 +1,48 @@
 module.exports = {
     "data": [
       {
+        "title": "Farmer",
+        "date": "2018",
+        "description": "SHARPIES AND MARKERS",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 1500,
+              "height": 1109
+            },
+            "medium": {
+              "width": 1100,
+              "height": 813
+            },
+            "small": {
+              "width": 800,
+              "height": 591
+            }
+          }
+      },
+      {
+        "title": "Cruella",
+        "date": "2018",
+        "description": "CHARCOAL",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 886,
+              "height": 1200
+            },
+            "medium": {
+              "width": 665,
+              "height": 900
+            },
+            "small": {
+              "width": 443,
+              "height": 600
+            }
+          }
+      },
+      {
         "title": "Rembrandt Study",
         "date": "2017",
         "description": "INK AND WATERCOLORS",
@@ -176,15 +218,15 @@ module.exports = {
         "info": "",
         "sizes": {
             "large": {
-              "width": 909,
+              "width": 917,
               "height": 1200
             },
             "medium": {
-              "width": 681,
+              "width": 687,
               "height": 900
             },
             "small": {
-              "width": 454,
+              "width": 458,
               "height": 600
             }
           }
