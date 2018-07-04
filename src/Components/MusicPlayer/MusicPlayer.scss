@@ -1,3 +1,10 @@
 .music-player {
   text-align: center;
 }
+
+// iPhone size plus
+@media (max-width: 414px) and (max-height: 736px) {
+  .music-player {
+    width: 100%;
+  }
+}

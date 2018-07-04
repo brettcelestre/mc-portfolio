@@ -28,10 +28,11 @@ constructor(props){
 }
 
 render() {
+  console.log('window.width', window.innerWidth);
   return (
     <div className="container">
       <div className="row music-player">
-        {ReactHtmlParser(this.state.album.embed)}
+        {ReactHtmlParser(`${this.state.album.embed.substr(0,15)}100%${this.state.album.embed.substr(18)}`)}
       </div>
     </div>
   );
