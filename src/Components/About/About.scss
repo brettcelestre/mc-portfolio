@@ -22,7 +22,21 @@
 
 .bio-image {
   width: 100%;
-  // min-width: 320px;
-  // max-width: 432px;
   height: auto;
+}
+
+.instagram-link-box {
+  width: 100%;
+}
+
+.instagram-logo {
+  position: relative;
+  text-align: center;
+  width: 35px;
+  height: 35px;
+  opacity: .5;
+  left: 50%;
+  &:hover {
+    cursor: pointer;
+  }
 }
