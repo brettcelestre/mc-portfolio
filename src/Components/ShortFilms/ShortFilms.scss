@@ -103,4 +103,11 @@ only screen and (max-width: 518px) {
   .film-section {
     padding-bottom: 35px;
   } 
+
+  .theatre {
+    top: 53px;
+    height: -webkit-calc(100vh - 53px);
+    height:    -moz-calc(100vh - 53px);
+    height:         calc(100vh - 53px);
+  }
 }
