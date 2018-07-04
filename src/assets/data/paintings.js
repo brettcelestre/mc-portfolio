@@ -33,15 +33,15 @@ module.exports = {
       "info": "",
       "sizes": {
           "large": {
-            "width": 931,
+            "width": 936,
             "height": 1200
           },
           "medium": {
-            "width": 698,
+            "width": 702,
             "height": 900
           },
           "small": {
-            "width": 465,
+            "width": 468,
             "height": 600
           }
         }
