@@ -62,7 +62,7 @@ module.exports = [
     year: '2018',
     type: 'Single',
     path: 'the-honeymooners/to-the-moon',
-    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/429345681&color=%231f1f1f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/623195712&color=%231f1f1f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: ``,
     trackList: [
       '1. All My Love'
@@ -170,32 +170,32 @@ module.exports = [
       "03_My-Devil-Doll.mp3",
       "04_Andele-Ariba.mp3"
     ]
-  },
-  {
-    band: 'Heil Hipster',
-    title: 'Self Titled',
-    year: '2011',
-    type: 'EP',
-    path: 'heil-hipster/self-titled',
-    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474887910&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-    description: `Vocals: Camille Pontevin
-      Guitar: Matthew Celestre
-      Drums, Vocals: Ryan Schmidt
-      Track 1 written by Matthew Celestre
-      Tracks 2-5 written by Ryan Schmidt`,
-    trackList: [
-      '1. El Matador',
-      '2. Manage a Trios',
-      '3. Don’t Call Me Ash',
-      '4. Invasion',
-      '5. Kill Violently (Live)'
-    ],
-    mp3s: [
-      '01_El_Matador',
-      '02_Manage_a_Trios',
-      '03_Don’t_Call_Me_Ash',
-      '04_Invasion',
-      '05_Kill_Violently_(Live)'
-    ]
   }
+  // {
+  //   band: 'Heil Hipster',
+  //   title: 'Self Titled',
+  //   year: '2011',
+  //   type: 'EP',
+  //   path: 'heil-hipster/self-titled',
+  //   embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474887910&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+  //   description: `Vocals: Camille Pontevin
+  //     Guitar: Matthew Celestre
+  //     Drums, Vocals: Ryan Schmidt
+  //     Track 1 written by Matthew Celestre
+  //     Tracks 2-5 written by Ryan Schmidt`,
+  //   trackList: [
+  //     '1. El Matador',
+  //     '2. Manage a Trios',
+  //     '3. Don’t Call Me Ash',
+  //     '4. Invasion',
+  //     '5. Kill Violently (Live)'
+  //   ],
+  //   mp3s: [
+  //     '01_El_Matador',
+  //     '02_Manage_a_Trios',
+  //     '03_Don’t_Call_Me_Ash',
+  //     '04_Invasion',
+  //     '05_Kill_Violently_(Live)'
+  //   ]
+  // }
 ]

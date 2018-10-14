@@ -26,6 +26,10 @@
 
 .image-viewer {
   overflow-y: hidden !important;
+  outline: none;
+  &:focus {
+    outline: none;
+  }
 }
 
 .image {
@@ -177,6 +181,10 @@
 
   .image-viewer {
     margin-bottom: 0px;
+    outline: none;
+    &:focus {
+      outline: none;
+    }
   }
 
 }
