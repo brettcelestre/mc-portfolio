@@ -7,6 +7,11 @@ import youtubeWidth from './ShortFilms.css';
 const filmData = require('../../assets/data/short-films.json');
 
 const filmsSRC = {
+  "The Art of Matthew Celestre": {
+    small: require('../../assets/img/short-films/the-art-of-matthew-celestre/Banner_Small.jpg'),
+    medium: require('../../assets/img/short-films/the-art-of-matthew-celestre/Banner_Medium.jpg'),
+    large: require('../../assets/img/short-films/the-art-of-matthew-celestre/Banner_Large.jpg')
+  },
   "Del Rio": {
     small: require('../../assets/img/short-films/del-rio/Banner_Small.jpg'),
     medium: require('../../assets/img/short-films/del-rio/Banner_Medium.jpg'),
@@ -69,6 +74,11 @@ class ShortFilms extends Component {
 
   playFilm(film) {
     switch(film){
+      case 'the-art-of-matthew-celestre':
+        this.setState({
+          videoUrl: "https://www.youtube.com/embed/vYrx4Nv0rdo?rel=0&showinfo=0&autoplay=1&enablejsapi=1&modestbranding=0",
+          theatreMode: true });
+        break;
       case 'del-rio':
         this.setState({
           videoUrl: "https://www.youtube.com/embed/h8nbA3BLtbI?rel=0&showinfo=0&autoplay=1&version=3&enablejsapi=1",
@@ -76,12 +86,12 @@ class ShortFilms extends Component {
         break;
       case 'ballroom':
         this.setState({
-          videoUrl: "https://www.youtube.com/embed/qSpbsE7gabM?rel=0&amp;showinfo=0&autoplay=1&enablejsapi=1",
+          videoUrl: "https://www.youtube.com/embed/qSpbsE7gabM?rel=0&showinfo=0&autoplay=1&enablejsapi=1",
           theatreMode: true });
         break;
       case 'gavin':
         this.setState({
-          videoUrl: "https://www.youtube.com/embed/KCizRihPlU0?rel=0&amp;showinfo=0&autoplay=1&enablejsapi=1",
+          videoUrl: "https://www.youtube.com/embed/KCizRihPlU0?rel=0&showinfo=0&autoplay=1&enablejsapi=1",
           theatreMode: true });
         break;
     }
@@ -110,6 +120,19 @@ class ShortFilms extends Component {
         }/>
 
         <div className="short-films">
+          <div className="row film-section" onClick={()=>{this.playFilm('the-art-of-matthew-celestre')}}>
+            <img
+              src={filmsSRC["The Art of Matthew Celestre"][this.state.currentSize]}
+              width={this.state.width}
+              height={this.state.height}
+              alt="The Art of Matthew Celestre"
+              className="banner-image"/>
+            <div className="film-info">
+              <h1 className="film-title">The Art of Matthew Celestre</h1>
+              <span className="film-year">2019 - 2:28</span>
+            </div>
+          </div>
+
           <div className="row film-section" onClick={()=>{this.playFilm('del-rio')}}>
             <img
               src={filmsSRC["Del Rio"][this.state.currentSize]}

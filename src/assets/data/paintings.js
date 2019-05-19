@@ -1,30 +1,55 @@
 module.exports = {
   "data": [
-    // {
-    //   "title": "The Casino",
-    //   "date": "2017",
-    //   "description": "OIL ON CANVAS | 6' x 4'",
-    //   "arrows": "light",
-    //   "info": "",
-    //   "sizes": {
-    //       "zoom": {
-    //         "width": 100,
-    //         "height": 100
-    //       },
-    //       "large": {
-    //         "width": 1446,
-    //         "height": 1200
-    //       },
-    //       "medium": {
-    //         "width": 1085,
-    //         "height": 900
-    //       },
-    //       "small": {
-    //         "width": 723,
-    //         "height": 600
-    //       }
-    //     }
-    // },
+    {
+      "title": "Bridge",
+      "date": "2019",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "40\" x 29\"",
+      "sizes": {
+          "zoom": {
+            "width": 1500,
+            "height": 1117
+          },
+          "large": {
+            "width": 1500,
+            "height": 1117
+          },
+          "medium": {
+            "width": 1100,
+            "height": 819
+          },
+          "small": {
+            "width": 800,
+            "height": 596
+          }
+        }
+    },
+    {
+      "title": "The Casino",
+      "date": "2017",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "40\" x 29\"",
+      "sizes": {
+          "zoom": {
+            "width": 1500,
+            "height": 1170
+          },
+          "large": {
+            "width": 1500,
+            "height": 1170
+          },
+          "medium": {
+            "width": 1100,
+            "height": 858
+          },
+          "small": {
+            "width": 800,
+            "height": 624
+          }
+        }
+    },
     {
       "title": "Innocent X",
       "date": "2018",

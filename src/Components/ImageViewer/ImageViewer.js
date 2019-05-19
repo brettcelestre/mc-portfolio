@@ -1,5 +1,6 @@
 
 import React, { Component } from 'react';
+import Img from 'react-image';
 import { Link, Redirect } from 'react-router-dom';
 import { WindowResizeListener } from 'react-window-resize-listener';
 import PropTypes from 'prop-types';
@@ -19,6 +20,16 @@ const galleryData = {
 
 const artwork = {
   "paintings": {
+    "Bridge": {
+      small: require('../../assets/gallery/paintings/Bridge_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/Bridge_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/Bridge_Large.jpg')
+    },
+    "The Casino": {
+      small: require('../../assets/gallery/paintings/The_Casino_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/The_Casino_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/The_Casino_Large.jpg')
+    },
     "Innocent X": {
       small: require('../../assets/gallery/paintings/Innocent_X_Small.jpg'),
       medium: require('../../assets/gallery/paintings/Innocent_X_Medium.jpg'),
@@ -113,6 +124,11 @@ const artwork = {
       medium: require('../../assets/gallery/crossHatchings/Edith_Medium.jpg'),
       large: require('../../assets/gallery/crossHatchings/Edith_Large.jpg')
     },
+    "Victoria": {
+      small: require('../../assets/gallery/crossHatchings/Victoria_Small.jpg'),
+      medium: require('../../assets/gallery/crossHatchings/Victoria_Medium.jpg'),
+      large: require('../../assets/gallery/crossHatchings/Victoria_Large.jpg')
+    },
     "Elderly Woman Study": {
       small: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Small.jpg'),
       medium: require('../../assets/gallery/crossHatchings/Elderly_Woman_Study_Medium.jpg'),
@@ -160,15 +176,20 @@ const artwork = {
     }
   },
   "drawings": {
-    "Farmer": {
-      small: require('../../assets/gallery/drawings/Farmer_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/Farmer_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/Farmer_Large.jpg')
+    "Venus": {
+      small: require('../../assets/gallery/drawings/Venus_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Venus_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Venus_Large.jpg')
     },
-    "Cruella": {
-      small: require('../../assets/gallery/drawings/Cruella_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/Cruella_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/Cruella_Large.jpg')
+    "Ballroom Mask": {
+      small: require('../../assets/gallery/drawings/Ballroom_Mask_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Ballroom_Mask_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Ballroom_Mask_Large.jpg')
+    },
+    "Barfly": {
+      small: require('../../assets/gallery/drawings/Barfly_Small.jpg'),
+      medium: require('../../assets/gallery/drawings/Barfly_Medium.jpg'),
+      large: require('../../assets/gallery/drawings/Barfly_Large.jpg')
     },
     "Rembrandt Study": {
       small: require('../../assets/gallery/drawings/Rembrandt_Study_Small.jpg'),
@@ -184,21 +205,6 @@ const artwork = {
       small: require('../../assets/gallery/drawings/Bunny_On_Bike_Small.jpg'),
       medium: require('../../assets/gallery/drawings/Bunny_On_Bike_Medium.jpg'),
       large: require('../../assets/gallery/drawings/Bunny_On_Bike_Large.jpg')
-    },
-    "Death Head Moth": {
-      small: require('../../assets/gallery/drawings/Death_Head_Moth_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/Death_Head_Moth_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/Death_Head_Moth_Large.jpg')
-    },
-    "To The Lost": {
-      small: require('../../assets/gallery/drawings/To_The_Lost_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/To_The_Lost_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/To_The_Lost_Large.jpg')
-    },
-    "Milo At War": {
-      small: require('../../assets/gallery/drawings/Milo_At_War_Small.jpg'),
-      medium: require('../../assets/gallery/drawings/Milo_At_War_Medium.jpg'),
-      large: require('../../assets/gallery/drawings/Milo_At_War_Large.jpg')
     },
     "Bipolar Disorder": {
       small: require('../../assets/gallery/drawings/Bipolar_Disorder_Small.jpg'),
@@ -242,6 +248,7 @@ class ImageViewer extends Component {
   }
 
   componentDidMount() {
+    window.addEventListener('keydown', this.onKeyPressed, true);
     // Puts focus on image-viewer so arrow keys will change image
     document.getElementsByClassName('image-viewer')[0].focus();
   }
@@ -258,6 +265,10 @@ class ImageViewer extends Component {
       date: galleryData[this.state.gallery].data[this.state.index].date,
       width: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].width,
       height: galleryData[this.state.gallery].data[this.state.index].sizes[this.state.currentSize].height});
+  }
+
+  componentWillUnmount(){
+    window.removeEventListener('keydown', this.onKeyPressed, true);
   }
 
   componentDidUpdate() {
@@ -491,8 +502,6 @@ class ImageViewer extends Component {
   }
 
   render() {
-    window.addEventListener("keydown", this.onKeyPressed, true);
-
     const { match, location, history } = this.props;
 
     return (
@@ -512,6 +521,7 @@ class ImageViewer extends Component {
         </div>
 
         <div className={this.state.zoom ? "image-hide" : "image"}>
+         {/* TODO - implement react-image for lazy loading */}
           <img
             src={artwork[this.state.gallery][this.state.name][this.state.currentSize]}
             width={this.state.width}

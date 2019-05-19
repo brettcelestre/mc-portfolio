@@ -37,30 +37,27 @@ module.exports = [
   //     But ya don’t know how`
   //   ]
   // },
-  // {
-  //   band: 'The Bozos',
-  //   title: 'Shock Therapy',
-  //   year: '2014',
-  //   type: 'EP',
-  //   path: 'the-bozos/shock-therapy',
-  //   embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474894972&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
-  //   description: `Vocals, Guitar, Drums: Ryan Schmidt
-  //   Bass, Background Vocals: Matthew Celestre
-  //   All songs written by Matthew Celestre`,
-  //   trackList: [
-  //     '1. Tarnished',
-  //     '2. Lustful Love'
-  //   ],
-  //   mp3s: [
-  //     '01_Tarnished.mp3',
-  //     '02_Lustful-Love.mp3'
-  //   ]
-  // },
+
+
+
+  {
+    band: 'The Honeymooners',
+    title: 'Adore',
+    year: '2018',
+    type: 'EP',
+    path: 'the-honeymooners/adore',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/609124062&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    description: ``,
+    trackList: [
+      '1. All My Love'
+    ],
+    mp3s: []
+  },
   {
     band: 'The Honeymooners',
     title: 'To The Moon!',
     year: '2018',
-    type: 'Single',
+    type: 'EP',
     path: 'the-honeymooners/to-the-moon',
     embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/623195712&color=%231f1f1f&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: ``,
@@ -68,6 +65,31 @@ module.exports = [
       '1. All My Love'
     ],
     mp3s: []
+  },
+  {
+    band: 'The Bozos',
+    title: 'Shock Therapy',
+    year: '2014',
+    type: 'EP',
+    path: 'the-bozos/shock-therapy',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/760153587&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    description: `Vocals, Guitar, Drums: Ryan Schmidt
+    Bass, Background Vocals: Matthew Celestre
+    All songs written by Matthew Celestre`,
+    trackList: [
+      "Tarnished",
+      "Runaway Drea",
+      "Lustful Lov",
+      "Bubblegum Shrin",
+      "Ghoul Ga",
+      "My Delirium",
+      "Bing",
+      "There’s A Legend ‘Round Her"
+    ],
+    mp3s: [
+      '01_Tarnished.mp3',
+      '02_Lustful-Love.mp3'
+    ]
   },
   {
     band: 'The Bozos',

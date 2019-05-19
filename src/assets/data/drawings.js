@@ -1,47 +1,110 @@
 module.exports = {
     "data": [
       {
-        "title": "Farmer",
+        "title": "Venus",
         "date": "2018",
-        "description": "SHARPIES AND MARKERS",
+        "description": "SHARPIES ON PAPER",
         "arrows": "dark",
         "info": "",
         "sizes": {
             "large": {
               "width": 1500,
-              "height": 1109
+              "height": 1150
             },
             "medium": {
               "width": 1100,
-              "height": 813
+              "height": 842
             },
             "small": {
               "width": 800,
-              "height": 591
+              "height": 613
             }
           }
       },
       {
-        "title": "Cruella",
+        "title": "Ballroom Mask",
         "date": "2018",
-        "description": "CHARCOAL",
+        "description": "SHARPIES ON PAPER",
         "arrows": "dark",
         "info": "",
         "sizes": {
             "large": {
-              "width": 886,
+              "width": 1500,
+              "height": 1116
+            },
+            "medium": {
+              "width": 1100,
+              "height": 819
+            },
+            "small": {
+              "width": 800,
+              "height": 595
+            }
+          }
+      },
+      {
+        "title": "Barfly",
+        "date": "2018",
+        "description": "SHARPIES ON PAPER",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 963,
               "height": 1200
             },
             "medium": {
-              "width": 665,
+              "width": 722,
               "height": 900
             },
             "small": {
-              "width": 443,
+              "width": 481,
               "height": 600
             }
           }
       },
+  // {
+  //   "title": "Farmer",
+  //   "date": "2018",
+  //   "description": "SHARPIES AND MARKERS",
+  //   "arrows": "dark",
+  //   "info": "",
+  //   "sizes": {
+  //       "large": {
+  //         "width": 1500,
+  //         "height": 1109
+  //       },
+  //       "medium": {
+  //         "width": 1100,
+  //         "height": 813
+  //       },
+  //       "small": {
+  //         "width": 800,
+  //         "height": 591
+  //       }
+  //     }
+  // },
+  // {
+  //   "title": "Cruella",
+  //   "date": "2018",
+  //   "description": "CHARCOAL",
+  //   "arrows": "dark",
+  //   "info": "",
+  //   "sizes": {
+  //       "large": {
+  //         "width": 886,
+  //         "height": 1200
+  //       },
+  //       "medium": {
+  //         "width": 665,
+  //         "height": 900
+  //       },
+  //       "small": {
+  //         "width": 443,
+  //         "height": 600
+  //       }
+  //     }
+  // },
       {
         "title": "Rembrandt Study",
         "date": "2017",
@@ -147,27 +210,27 @@ module.exports = {
       //       }
       //     }
       // },
-      {
-        "title": "Milo At War",
-        "date": "2015",
-        "description": "INK ON PAPER",
-        "arrows": "dark",
-        "info": "",
-        "sizes": {
-            "large": {
-              "width": 938,
-              "height": 1200
-            },
-            "medium": {
-              "width": 704,
-              "height": 900
-            },
-            "small": {
-              "width": 469,
-              "height": 600
-            }
-          }
-      },
+      // {
+      //   "title": "Milo At War",
+      //   "date": "2015",
+      //   "description": "INK ON PAPER",
+      //   "arrows": "dark",
+      //   "info": "",
+      //   "sizes": {
+      //       "large": {
+      //         "width": 938,
+      //         "height": 1200
+      //       },
+      //       "medium": {
+      //         "width": 704,
+      //         "height": 900
+      //       },
+      //       "small": {
+      //         "width": 469,
+      //         "height": 600
+      //       }
+      //     }
+      // },
       {
         "title": "Bipolar Disorder",
         "date": "2013",
@@ -296,4 +359,3 @@ module.exports = {
       }
     ]
   }
-  

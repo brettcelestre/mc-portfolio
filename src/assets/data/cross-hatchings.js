@@ -43,6 +43,27 @@ module.exports = {
           }
       },
       {
+        "title": "Victoria",
+        "date": "2017",
+        "description": "INK ON PAPER",
+        "arrows": "dark",
+        "info": "",
+        "sizes": {
+            "large": {
+              "width": 901,
+              "height": 1200
+            },
+            "medium": {
+              "width": 675,
+              "height": 900
+            },
+            "small": {
+              "width": 450,
+              "height": 600
+            }
+          }
+      },
+      {
         "title": "Elderly Woman Study",
         "date": "2017",
         "description": "INK ON PAPER",
