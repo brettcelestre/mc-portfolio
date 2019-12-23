@@ -120,7 +120,7 @@ class ShortFilms extends Component {
         }/>
 
         <div className="short-films">
-          <div className="row film-section" onClick={()=>{this.playFilm('the-art-of-matthew-celestre')}}>
+          {/* <div className="row film-section" onClick={()=>{this.playFilm('the-art-of-matthew-celestre')}}>
             <img
               src={filmsSRC["The Art of Matthew Celestre"][this.state.currentSize]}
               width={this.state.width}
@@ -131,7 +131,7 @@ class ShortFilms extends Component {
               <h1 className="film-title">The Art of Matthew Celestre</h1>
               <span className="film-year">2019 - 2:28</span>
             </div>
-          </div>
+          </div> */}
 
           <div className="row film-section" onClick={()=>{this.playFilm('del-rio')}}>
             <img

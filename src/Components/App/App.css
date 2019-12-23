@@ -1,17 +1,21 @@
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+@font-face {
+  font-family: 'plainblack';
+  src: url("../../assets/fonts/Shadowed Black.ttf") format("truetype"); }
+
 body {
   -webkit-font-smoothing: antialiased; }
 
 .mainTitle {
-  font-family: 'Playfair Display', serif;
-  font-weight: 400;
-  font-size: 1.7rem;
-  letter-spacing: 4px;
   text-align: left;
-  margin: 11px 0 7px 0;
-  padding-left: 15px;
-  text-decoration: none;
-  color: white;
+  font-family: "plainblack";
+  font-weight: 100;
+  font-size: 1.95rem;
+  padding: 0 0 0 15px;
+  margin: 11px 0 0px 0;
+  letter-spacing: 0.75px;
+  color: #e4e4e4;
+  text-decoration: "none";
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;
@@ -95,7 +99,7 @@ li {
   width: 100%;
   align-items: center;
   height: 14px;
-  margin-top: 9px;
+  margin-top: 5px;
   -webkit-touch-callout: none;
   /* iOS Safari */
   -webkit-user-select: none;

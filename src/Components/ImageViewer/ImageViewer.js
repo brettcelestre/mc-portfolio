@@ -20,10 +20,15 @@ const galleryData = {
 
 const artwork = {
   "paintings": {
-    "Bridge": {
-      small: require('../../assets/gallery/paintings/Bridge_Small.jpg'),
-      medium: require('../../assets/gallery/paintings/Bridge_Medium.jpg'),
-      large: require('../../assets/gallery/paintings/Bridge_Large.jpg')
+    "The Raft Of The Medusa": {
+      small: require('../../assets/gallery/paintings/The_Raft_of_the_Medusa_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/The_Raft_of_the_Medusa_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/The_Raft_of_the_Medusa_Large.jpg')
+    },
+    "Karl Theodor Bridge": {
+      small: require('../../assets/gallery/paintings/Karl_Theodor_Bridge_Small.jpg'),
+      medium: require('../../assets/gallery/paintings/Karl_Theodor_Bridge_Medium.jpg'),
+      large: require('../../assets/gallery/paintings/Karl_Theodor_Bridge_Large.jpg')
     },
     "The Casino": {
       small: require('../../assets/gallery/paintings/The_Casino_Small.jpg'),

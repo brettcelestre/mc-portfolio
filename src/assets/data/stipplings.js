@@ -84,19 +84,19 @@ module.exports = {
       "info": "",
       "sizes": {
           "zoom": {
-            "width": 999,
+            "width": 951,
             "height": 100
           },
           "large": {
-            "width": 920,
+            "width": 951,
             "height": 1200
           },
           "medium": {
-            "width": 690,
+            "width": 713,
             "height": 900
           },
           "small": {
-            "width": 460,
+            "width": 475,
             "height": 600
           }
         }

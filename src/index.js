@@ -48,7 +48,7 @@ ReactDOM.render(
         <Route name="links" path="/links" component={Links} />
         <Route name="about" path="/about" component={About} />
         <Redirect to={{
-          pathname: `/artwork/cross-hatchings/${buildImageRouteName(crossHatchings.data[0].title)}`
+          pathname: `/artwork/paintings/${buildImageRouteName(paintings.data[0].title)}`
         }}/>
         <Route component={ImageViewer} />
       </Switch>

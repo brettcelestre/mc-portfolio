@@ -1,7 +1,7 @@
 module.exports = {
   "data": [
     {
-      "title": "Bridge",
+      "title": "The Raft Of The Medusa",
       "date": "2019",
       "description": "OIL ON CANVAS",
       "arrows": "light",
@@ -9,25 +9,50 @@ module.exports = {
       "sizes": {
           "zoom": {
             "width": 1500,
-            "height": 1117
+            "height": 1169
           },
           "large": {
             "width": 1500,
-            "height": 1117
+            "height": 1169
           },
           "medium": {
             "width": 1100,
-            "height": 819
+            "height": 857
           },
           "small": {
-            "width": 800,
-            "height": 596
+            "width": 770,
+            "height": 600
+          }
+        }
+    },
+    {
+      "title": "Karl Theodor Bridge",
+      "date": "2019",
+      "description": "OIL ON CANVAS",
+      "arrows": "light",
+      "info": "40\" x 29\"",
+      "sizes": {
+          "zoom": {
+            "width": 1500,
+            "height": 1146
+          },
+          "large": {
+            "width": 1500,
+            "height": 1146
+          },
+          "medium": {
+            "width": 1100,
+            "height": 841
+          },
+          "small": {
+            "width": 785,
+            "height": 600
           }
         }
     },
     {
       "title": "The Casino",
-      "date": "2017",
+      "date": "2018",
       "description": "OIL ON CANVAS",
       "arrows": "light",
       "info": "40\" x 29\"",
@@ -51,77 +76,6 @@ module.exports = {
         }
     },
     {
-      "title": "Innocent X",
-      "date": "2018",
-      "description": "OIL ON CANVAS",
-      "arrows": "light",
-      "info": "",
-      "sizes": {
-          "large": {
-            "width": 936,
-            "height": 1200
-          },
-          "medium": {
-            "width": 702,
-            "height": 900
-          },
-          "small": {
-            "width": 468,
-            "height": 600
-          }
-        }
-    },
-    {
-      "title": "Josette",
-      "date": "2017",
-      "description": "OIL ON CANVAS",
-      "arrows": "light",
-      "info": "",
-      "sizes": {
-          "zoom": {
-            "width": 100,
-            "height": 100
-          },
-          "large": {
-            "width": 966,
-            "height": 1200
-          },
-          "medium": {
-            "width": 724,
-            "height": 900
-          },
-          "small": {
-            "width": 483,
-            "height": 600
-          }
-        }
-    },
-    {
-      "title": "The Roaring Twenties",
-      "date": "2017",
-      "description": "OIL ON CANVAS",
-      "arrows": "light",
-      "info": "",
-      "sizes": {
-          "zoom": {
-            "width": 100,
-            "height": 100
-          },
-          "large": {
-            "width": 946,
-            "height": 1200
-          },
-          "medium": {
-            "width": 709,
-            "height": 900
-          },
-          "small": {
-            "width": 473,
-            "height": 600
-          }
-        }
-    },
-    {
       "title": "Somnolence",
       "date": "2013",
       "description": "OIL ON CANVAS",
@@ -133,44 +87,19 @@ module.exports = {
           "height": 100
         },
         "large": {
-          "width": 1498,
+          "width": 1486,
           "height": 1200
         },
         "medium": {
-          "width": 1100,
-          "height": 881
+          "width": 1115,
+          "height": 900
         },
         "small": {
-          "width": 749,
+          "width": 743,
           "height": 600
         }
       }
     },
-    // {
-    //   "title": "Goombah Lord",
-    //   "date": "2010",
-    //   "description": "OIL ON CANVAS | 6' x 4'",
-    //   "arrows": "light",
-    //   "info": "",
-    //   "sizes": {
-    //       "zoom": {
-    //         "width": 100,
-    //         "height": 100
-    //       },
-    //       "large": {
-    //         "width": 1446,
-    //         "height": 1200
-    //       },
-    //       "medium": {
-    //         "width": 1085,
-    //         "height": 900
-    //       },
-    //       "small": {
-    //         "width": 723,
-    //         "height": 600
-    //       }
-    //     }
-    // },
     {
       "title": "Oaklahoma City",
       "date": "2009",
@@ -298,3 +227,101 @@ module.exports = {
     }
   ]
 }
+
+    // {
+    //   "title": "Innocent X",
+    //   "date": "2018",
+    //   "description": "OIL ON CANVAS",
+    //   "arrows": "light",
+    //   "info": "",
+    //   "sizes": {
+    //       "large": {
+    //         "width": 936,
+    //         "height": 1200
+    //       },
+    //       "medium": {
+    //         "width": 702,
+    //         "height": 900
+    //       },
+    //       "small": {
+    //         "width": 468,
+    //         "height": 600
+    //       }
+    //     }
+    // },
+    // {
+    //   "title": "Josette",
+    //   "date": "2017",
+    //   "description": "OIL ON CANVAS",
+    //   "arrows": "light",
+    //   "info": "",
+    //   "sizes": {
+    //       "zoom": {
+    //         "width": 100,
+    //         "height": 100
+    //       },
+    //       "large": {
+    //         "width": 966,
+    //         "height": 1200
+    //       },
+    //       "medium": {
+    //         "width": 724,
+    //         "height": 900
+    //       },
+    //       "small": {
+    //         "width": 483,
+    //         "height": 600
+    //       }
+    //     }
+    // },
+    // {
+    //   "title": "The Roaring Twenties",
+    //   "date": "2017",
+    //   "description": "OIL ON CANVAS",
+    //   "arrows": "light",
+    //   "info": "",
+    //   "sizes": {
+    //       "zoom": {
+    //         "width": 100,
+    //         "height": 100
+    //       },
+    //       "large": {
+    //         "width": 946,
+    //         "height": 1200
+    //       },
+    //       "medium": {
+    //         "width": 709,
+    //         "height": 900
+    //       },
+    //       "small": {
+    //         "width": 473,
+    //         "height": 600
+    //       }
+    //     }
+    // },
+
+  // {
+    //   "title": "Goombah Lord",
+    //   "date": "2010",
+    //   "description": "OIL ON CANVAS | 6' x 4'",
+    //   "arrows": "light",
+    //   "info": "",
+    //   "sizes": {
+    //       "zoom": {
+    //         "width": 100,
+    //         "height": 100
+    //       },
+    //       "large": {
+    //         "width": 1446,
+    //         "height": 1200
+    //       },
+    //       "medium": {
+    //         "width": 1085,
+    //         "height": 900
+    //       },
+    //       "small": {
+    //         "width": 723,
+    //         "height": 600
+    //       }
+    //     }
+    // },

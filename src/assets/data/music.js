@@ -67,6 +67,19 @@ module.exports = [
     mp3s: []
   },
   {
+    band: 'Feelings Party',
+    title: 'Mia',
+    year: '2015',
+    type: 'Single',
+    path: 'feelings-party/mia',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/732489805&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    description: ``,
+    trackList: [
+      '1. All My Love'
+    ],
+    mp3s: []
+  },
+  {
     band: 'The Bozos',
     title: 'Shock Therapy',
     year: '2014',
@@ -97,7 +110,7 @@ module.exports = [
     year: '2013',
     type: 'EP',
     path: 'the-bozos/to-the-lost',
-    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/474893343&color=%23121212&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
+    embed: '<iframe width="520" height="600" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/950750569&color=%23ff5500&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe>',
     description: `Vocals, Guitar, Drums: Ryan Schmidt
     Guitar, Bass: Matthew Celestre
     Track 1 written by Ryan Schmidt. Track two written by Matthew Celestre`,
